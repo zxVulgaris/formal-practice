@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>项目实战</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+	<style type="text/css">
+		#carousel-content img{
+			margin: 0 auto;
+		}
+		.carousel-control{
+			font-size: 48px;
+			line-height: 800px;
+		}
+		footer{
+			background: #eee;
+			padding: 60px 0;
+		}
+		footer p{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand" style="padding:8px;margin-left: 8px;">
+						<img src="img/favicon.ico" alt="hao123">
+					</a>
+					<button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>			
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-fire"></span> 案例</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- nav navbar the diference between each other -->
+
+		<!-- 轮播图 -->
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" id="carousel-content">
+				<div class="item active" style="background: #d99558;">
+					<img src="img/3.jpg" alt="第一张">
+					<div class="carousel-caption">
+						<p>第一张</p>
+					</div>
+				</div>
+				<div class="item" style="background: #d99558;">
+					<img src="img/3.jpg" alt="第二张">
+				</div>
+				<div class="item" style="background: #d99558;">
+					<img src="img/3.jpg" alt="第三张">
+				</div>	
+			</div>
+				<!-- 看不到箭头。。。 -->
+
+				<a href="#myCarousel" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>			
+				<a href="#myCarousel" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>			
+			
+		</div>
+
+		<!-- 首页内容 -->
+
+		<div class="tab1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="media">
+							<div class="media-left">
+								<img src="img/4.jpg" alt="代替图片">
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">课程内容</h4>
+								<p>高校不知名讲师编写，没有任何实际价值的教材</p>
+								<p>知名企业家，管理学大师联合编写的具有实现性教材</p>
+							</div>
+						</div>						
+					</div>
+					<div class="col-md-6">
+						<div class="media">
+							<div class="media-left">
+								<img src="img/4.jpg" alt="代替图片">
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">课程内容</h4>
+								<p>高校不知名讲师编写，没有任何实际价值的教材</p>
+								<p>知名企业家，管理学大师联合编写的具有实现性教材</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="media">
+							<div class="media-left">
+								<img src="img/4.jpg" alt="代替图片">
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">课程内容</h4>
+								<p>高校不知名讲师编写，没有任何实际价值的教材</p>
+								<p>知名企业家，管理学大师联合编写的具有实现性教材</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="media">
+							<div class="media-left">
+								<img src="img/4.jpg" alt="代替图片">
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">课程内容</h4>
+								<p>高校不知名讲师编写，没有任何实际价值的教材</p>
+								<p>知名企业家，管理学大师联合编写的具有实现性教材</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>强大的学习体系</h3>
+						<p>经过管理学大师层层把关，让企业进步</p>
+					</div>
+					<div class="col-md-6">
+						<img src="img/4.jpg" alt="dd">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="img/4.jpg" alt="dd">
+					</div>
+					<div class="col-md-6">
+						<h3>强大的学习体系</h3>
+						<p>经过管理学大师层层把关，让企业进步</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>版权啥的</p>
+		</footer>
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+
+	/*
+		//设置垂直居中
+		$('.carousel-control').css('line-height',$(".carousel-inner img").height()+'px');
+		
+		//console.log($(".carousel-inner img").height());		
+
+		
+		$(window).resize(function(){
+			// var $height=$('.carousel-inner img').eq(0)height()||
+			// 			$('.carousel-inner img').eq(1)height()||
+			// 			$('.carousel-inner img').eq(2)height();
+			// $('.carousel-control').css('line-height',$height+'px');
+			 
+			$('.carousel-control').css('line-height',$(".carousel-inner img").height()+'px'); 
+		});
+
+	*/
+		
+	</script>
+</body>
+</html>

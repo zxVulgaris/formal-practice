@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- 实现对不同手机分辨率的支持 -->
+	<title>列表和表格</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+	<style type="text/css">
+		.demo{
+				height: 100px;
+				background:#ccc;
+		}
+	</style>
+</head>
+<body>
+	<!-- list-inline实现列表在一行 -->
+	<ul class="container list-inline demo">
+		<li>businnesstobusiness</li>
+		<li>businnesstocustomer</li>
+		<li>businnesstogoverment</li>
+		<li>customertogoverment</li>
+	</ul>
+	
+	<!-- 实现有序列表的list-style为none -->
+	<ul class="container list-unstyled demo">
+		<li>businnesstobusiness</li>
+		<li>businnesstocustomer</li>
+		<li>businnesstogoverment</li>
+		<li>customertogoverment</li>
+	</ul>
+
+	<!-- 针对自定义列表的水平显示 -->
+	<dl class="dl-horizontal">
+		<dt>language</dt>
+		<dd>javascript</dd>
+		<dd>jquery</dd>
+		<dd>vue</dd>
+	</dl>
+
+<div class="container">
+<button class="btn btn-default">获取table的个数</button>
+<button class="close">&times;</button>
+	<table class="table">
+		<tr>
+			<td>name</td>
+			<td>sex</td>
+			<td>student_number</td>
+		</tr>
+		<tr>
+			<td>Chen Nan</td>
+			<td>girl</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>Guo Zhong</td>
+			<td>boy</td>
+			<td>234</td>
+		</tr>
+		<tr>
+			<td>Liu Mei</td>
+			<td>girl</td>
+			<td>734</td>
+		</tr>
+	</table>
+	
+	<!-- table-striped使得表格隔行变色，相当于jQuery中：nth-child（2n+1）。css（）以1为开头 -->
+	<table class="table table-striped">
+		<tr>
+			<td>name</td>
+			<td>sex</td>
+			<td>student_number</td>
+		</tr>
+		<tr>
+			<td>Chen Nan</td>
+			<td>girl</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>Guo Zhong</td>
+			<td>boy</td>
+			<td>234</td>
+		</tr>
+		<tr>
+			<td>Liu Mei</td>
+			<td>girl</td>
+			<td>734</td>
+		</tr>
+	</table>
+	
+
+	<!-- 给表格加上边框 -->
+	<table class="table table-bordered">
+		<tr>
+			<td>name</td>
+			<td>sex</td>
+			<td>student_number</td>
+		</tr>
+		<tr>
+			<td>Chen Nan</td>
+			<td>girl</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>Guo Zhong</td>
+			<td>boy</td>
+			<td>234</td>
+		</tr>
+		<tr>
+			<td>Liu Mei</td>
+			<td>girl</td>
+			<td>734</td>
+		</tr>
+	</table>
+	
+
+	<!-- 给表格添加高亮行 -->
+	<table class="table table-hover">
+		<tr>
+			<td>name</td>
+			<td>sex</td>
+			<td>student_number</td>
+		</tr>
+		<tr>
+			<td>Chen Nan</td>
+			<td>girl</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>Guo Zhong</td>
+			<td>boy</td>
+			<td>234</td>
+		</tr>
+		<tr>
+			<td>Liu Mei</td>
+			<td>girl</td>
+			<td>734</td>
+		</tr>
+	</table>
+</div>
+
+<!-- 响应式表格，当表格小于768px时会出现滚动条 -->
+<div class="table-responsive container">
+	<table class="table table-bordered table-hover">
+		<tr>
+			<td>name</td>
+			<td>sex</td>
+			<td>student_number</td>
+		</tr>
+		<tr>
+			<td>Chen Nan</td>
+			<td>girl</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>Guo Zhong</td>
+			<td>boy</td>
+			<td>234</td>
+		</tr>
+		<tr>
+			<td>Liu Mei</td>
+			<td>girl</td>
+			<td>734</td>
+		</tr>
+	</table>
+</div>
+
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(function(){
+					$('button').eq(1).click(function(){
+						$('table:first').remove('table');
+		}
+					
+		)
+	})
+		$(function(){
+			$('button').first().click(function(){
+						alert($('table').size());
+					})
+		})	
+	</script>
+</body>
+</html>

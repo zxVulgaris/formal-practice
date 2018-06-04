@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>弹出框和警告框</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+</head>
+<body style="margin: 100px;">
+
+
+	<div style="width: 200px;height: 100px;border: 1px solid red">
+		<button id="button" class="btn btn-lg btn-danger"
+				data-toggle="popover"
+				title="Bootstrap"
+				data-content="bootstrap是我这个暑假开始学习的可以用来代替css的一个用于前端开发的开源工具包"
+		>
+			按钮
+		</button>
+	</div>
+	<button id="btn">控制按钮</button>
+	
+
+	<!-- 警告框  data-dismiss="alert"-->
+
+	<div class="alert alert-warning" id="alert">
+		<button class="close">
+			<span>&times;</span>
+		</button>
+	警告：您的浏览器不支持哟，请及时更新</div>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$('#button').popover({
+			viewport:{
+				selector:'div',
+				padding:10,//没有单位，放入单位则出错
+			},
+		});
+
+		/*$('#btn').on('click',function(){
+			$('#button').popover('show');
+		});
+
+		$('#btn').on('click',function(){
+			$('#button').popover('hide');
+		})
+
+		$('#btn').on('click',function(){
+			$('#button').popover('toggle');
+		})
+
+		$('#btn').on('click',function(){
+			$('#button').popover('destroy');
+		})*/
+
+		$('#button').on('show.bs.popover',function(){
+			alert('show');//等等shown hide hidden
+		})
+
+		$('.close').on('click',function(){
+			$('#alert').alert('close');
+		});
+	</script>
+</body>
+</html>

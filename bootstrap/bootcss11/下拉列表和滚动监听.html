@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>模态框</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+
+</head>
+<body>
+	<!-- 下拉菜单 -->
+	<div class="dropdown" id="dropdown">
+		<ul class="dropdown-menu">
+			<li><a href="#">首页</a></li>
+			<li><a href="#">资讯</a></li>
+			<li><a href="#">产品</a></li>
+			<li><a href="#">关于</a></li>
+		</ul>
+		<button class="btn btn-primary" data-toggle="dropdown" data-target="dropdown">下拉菜单<span class="caret"></span></button>
+	</div>
+	
+	<!-- 滚动监听事件？ -->
+	<div class="navbar navbar-default" id="nav">
+		<a href="#" class="navbar-brand">品牌</a>
+		<ul class="nav navbar-nav">
+			<li><a href="#html">html</a></li>
+			<li><a href="#css">css</a></li>
+			<li><a href="#bootstrap">bootstrap</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown">javascipt<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#jquery">jQuery</a></li>
+					<li><a href="#yui">Yui</a></li>
+					<li><a href="#extjs">Extjs</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- data-spy="scroll" data-offset="100"  -->
+	<div style="padding: 0 20px;height: 134px;overflow:auto;" id="content">
+		<section class="sec">
+			<h4 id="html">html<a href="#" onclick="removeSec(this)">删除</a></h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+		<section class="sec">
+			<h4 id="css">css</h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+		<section class="sec">
+			<h4 id="bootstrap">bootstrap</h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+		<section class="sec">
+			<h4 id="jquery">jQuery</h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+		<section class="sec">
+			<h4 id="yui">Yui</h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+		<section class="sec">
+			<h4 id="extjs">Extjs</h4>
+			<p>html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 
+			通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+			</p>
+		</section>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		// $('#dropdown').on('show.bs.dropdown',function(){
+		// 	alert('show');
+		// })
+		// $('#dropdown').on('shown.bs.dropdown',function(){
+		// 	alert('shown');
+		// })
+		// $('#dropdown').on('hide.bs.dropdown',function(){
+		// 	alert('hide');
+		// })
+		// $('#dropdown').on('hidden.bs.dropdown',function(){
+		// 	alert('hidden');
+		// })
+		
+		$('#content').scrollspy({
+			offset:110,
+			target:'#nav',
+		})
+
+		// $('#nav').on('activate.bs.scrollspy',function(){
+		// 	alert('新条目被激活！');
+		// })
+
+		function removeSec(e){
+			$(e).parents('.sec').remove();
+			$('#content').scrollspy('refresh');//删除之后进行刷新
+		}
+
+	</script>
+</body>
+</html>

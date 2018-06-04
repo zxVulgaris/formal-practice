@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>下拉列表和输入框</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+	<style type="text/css">
+		.demo{
+				margin: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container form-inline">
+		<form action="#" method="post" class="form-group demo">
+			<label for="txtUserName">用户名</label>
+			<input type="text" name="UserName" class="form-control">
+		</form>
+		<form action="#" method="post" class="form-group demo">
+			<label for="txtUserName">密码</label>
+			<input type="password" name="UserPassword" class="form-control">
+		</form>
+	</div>
+
+	<!-- 水平表单 -->
+	<div class="container form-horizontal">
+		<form action="#" method="post" class="form-group demo">
+			<label class="control-label col-lg-1">用户名</label> 
+			<div class="col-lg-3">
+				<input type="text" name="UserName" class="form-control">
+			</div>
+			
+		</form>
+		<form action="#" method="post" class="form-group demo">
+			<label class="control-label col-lg-1">密码</label>
+			<div class="col-lg-3">
+				<input type="password" name="UserPassword" class="form-control">
+			</div>
+		</form> 
+	</div>
+
+	<!-- 下拉框    from-horizontal用于使文本和input框位于一行 -->
+	<div class="form-horizontal container">
+		<label class="control-label col-lg-1">下拉列表</label>
+		<div class="col-lg-3">
+			<select class="form-control">
+				<option value="1">javascript</option>
+				<option value="1">html</option>
+				<option value="1">css</option>
+			</select>
+		</div>
+		<label class="control-label col-lg-1">下拉列表</label>
+		<div class="col-lg-3">
+			<select class="form-control" multiple="multiple">
+				<option value="1">javascript</option>
+				<option value="1">html</option>
+				<option value="1">css</option>
+			</select>
+		</div>
+	 </div><!--form-control用于换行分组 -->
+		
+	<div class="container">
+		 <form class="form-group demo">
+		 	<label class="control-label col-lg-1">select</label>
+		 	<div class="col-lg-3">
+				<div class="input-group">
+					<span class="input-group-addon">@</span>
+					<input type="text" name="" class="form-control">
+					<span class="glyphicon glyphicon-ok form-control-feedback"
+					style="border-radius: 4px;border-size:1px;"></span>
+				</div>
+				
+			 </div><!--丑死了 -->
+		 </form>
+
+
+		<br style="margin-top:100px;">
+		<!-- 按钮与input框的组合 -->
+		<div class="dropdown input-group">
+			<input type="text" name="" placeholder="input your name please" class="form-control">
+			<div class="input-group-btn">				
+				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">提交
+				<span class="caret "></span></button>
+			</div>
+		</div>
+
+		<br style="margin-top:100px;">
+		<div class="dropdown input-group">
+			<div class="input-group-btn">				
+				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">提交<!-- 可能是一个js -->
+				<span class="caret "></span></button>
+			
+			<ul class="dropdown-menu open">
+				<li class="dropdown-header">网站导航</li>
+				<li>首页</li>
+				<li>资讯</li>
+				<li class="divider">关于</li>
+				<li class="disabled">其他</li>
+			</ul>
+		</div>
+		</div>
+		<br style="margin-top:100px;">
+
+		<!-- 导航垂直 -->
+		<ul class="nav nav-pills nav-stacked demo">
+			<li class="active"><a href="#">首页</a></li>
+			<!-- 没有放入标签a的时候显示不出nav的效果 -->
+			<li><a href="#">资讯</a></li>
+			<li><a href="#">关于</a></li>
+			<li><a href="#">其他</a></li>
+		</ul>
+
+		<ul class="nav nav-tabs demo">
+			<li class="active"><a href="#">首页</a></li>
+			<!-- 没有放入标签a的时候显示不出nav的效果 -->
+			<li><a href="#">资讯</a></li>
+			<li><a href="#">关于</a></li>
+			<li><a href="#">其他</a></li>
+		</ul>
+	
+		<!-- justified表示两端对齐平分一行 -->
+		<ul class="nav nav-tabs nav-justified demo">
+			<li class="active"><a href="#">首页</a></li>
+			<!-- 没有放入标签a的时候显示不出nav的效果 -->
+			<li><a href="#">资讯</a></li>
+			<li><a href="#">关于</a></li>
+			<li><a href="#">其他</a></li>
+		</ul>
+	</div>
+
+
+	
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

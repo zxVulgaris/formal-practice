@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>标签页和工具提示插件</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_theme.css">
+	<style type="text/css">
+		a:hover{
+			border-bottom:none;
+		}
+	</style>
+</head>
+<body style="margin: 100px;">
+	
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#html" data-toggle="tab">Html</a></li>
+		<li><a href="#bootstrap" data-toggle="tab">Bootstrap</a></li>
+		<li><a href="#css" data-toggle="tab">CSS</a></li>
+		<li><a href="#javascript" data-toggle="tab">Javascript</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="html">
+			html5W3C 在 1 月 22 日发布了最新的 HTML 5 工作草案。HTML 5 工作组包括 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+		</div>
+		<div class="tab-pane fade" id="bootstrap">
+			 AOL, Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+		</div>
+		<div class="tab-pane fade" id="css">
+			Apple, Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+		</div>
+		<div class="tab-pane fade" id="javascript">
+			Google, IBM, Microsoft, Mozilla, Nokia, Opera 以及数百个其他的开发商。HTML 5 中的一些新特性：嵌入音频、视频、图片的函数、客户端数据存储，以及交互式文档。其他特性包括新的页面元素，比如 通过制定如何处理所有 HTML 元素以及如何从错误中恢复的精确规则，HTML 5 改进了互操作性，并减少了开发成本。
+		</div>
+	</div>
+
+
+
+	<!-- 工具提示插件 -->
+
+	<div class="container" style="margin: 100px;"></div>
+	<!--data-animation="false" 淡入淡出效果无法实现
+		data-html="true"实现html语义转换
+		data-placement="auto” 方向的变化
+		data-original-title="jiao"与title有同样的作用，优先级比title低
+		data-trigger="click"表示如何触发tooltip
+		data-delay="500"表示hide和show的事件，延迟和隐藏的时间
+		data-template="<div class='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner'></div></div>替代title的内容
+		data-container用于扩大作用域
+		data-selector作用于父类
+	-->
+	<a href="#" 
+				title="<b>我是前端语言</b>" 
+				data-toggle="tooltip"
+				data-placement="auto"
+				data-html="true"
+
+	>html5</a>
+	<div class="btn-group" style="margin-top: 100px;">
+		<button class="btn btn-default" title="我是前端语言" data-toggle="tooltip">left</button>
+		<button class="btn btn-default" title="我是前端语言" data-toggle="tooltip">center</button>
+		<button class="btn btn-default" title="我是前端语言" data-toggle="tooltip">right</button>
+	</div>
+
+	<button id="button">dianji</button>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$('a').tooltip({
+			animation:false,
+			trigger:'click',
+			// delay:{
+			// 	show:500,
+			// 	hide:500,
+			// },
+
+		})
+		// $('button').tooltip({
+		// 	container:'body',//success
+		// });
+		// 
+		$('#button').on('click',function(){
+			// $('a').tooltip('show')
+			// $('a').tooltip('hide')
+
+			// $('a').tooltip('toggle')
+			$('a').tooltip('destroy')
+		});
+
+		$('a').on('show.bs.tooltip',function(){
+			alert('show')
+		})
+		$('a').on('shown.bs.tooltip',function(){
+			alert('shown')
+		})
+		$('a').on('hide.bs.tooltip',function(){
+			alert('hide')
+		})
+		$('a').on('hidden.bs.tooltip',function(){
+			alert('hidden')
+		})
+	</script>
+</body>
+</html>
