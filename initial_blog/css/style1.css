@@ -1,0 +1,43 @@
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family:"宋体","Times New Roman", serif;
+	font-size: 16px;
+	width: 100%;
+	background-image: url(../img/6.jpeg);
+	background-position: top center;
+	/*background-repeat: no-repeat;*/
+	
+}
+#container{
+	width: 90%;
+	/*height:400px;
+	background: green;*/
+	margin: 20px auto;
+	/*border: 1px solid white;
+	position: absolute;*/
+}
+#head{
+	line-height: 30px;
+	color: #e1d4cc;
+	/*opacity: 0.8;*/
+	padding: 20px;
+
+}
+#head_title{
+	margin-bottom: 20px;
+}
+#head_nav{
+	list-style: none;
+
+}
+#head_nav li {
+	float: left;
+	margin-right: 10px;
+}
+#head_nav a{
+	color: white;
+}

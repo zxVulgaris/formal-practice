@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>favorite page</title>
+<link href="css/style1.css" rel="stylesheet">
+<link href="css/favorite.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/3.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="head">
+			<h1 id="head_title">乔木的博客</h1>
+			<ul id="head_nav">
+				<li><a href="">首页</a> |</li>
+				<li><a href="">记录</a> |</li>
+				<li><a href="">收藏</a> |</li>
+				<li><a href="">关于</a></li>
+			</ul>
+		</div>
+		<div id="fav-main">
+			<div id="autoplay">			
+				<img src="img/15.jpeg">
+				<img src="img/11.png">
+				<img src="img/28.jpg">
+				<img src="img/24.jpg">
+				<img src="img/8.jpg">
+				<img src="img/27.jpeg">
+			</div>
+			<ol id="list">
+				<li class="on" id="a">1</li>
+				<li id="b">2</li>
+				<li id="c">3</li>
+				<li id="d">4</li>
+				<li id="e">5</li>
+				<li id="f">6</li>
+			</ol>
+			<div id="fav-picture">
+				<table>
+					<tr>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/23.png"></a>
+							</div>
+							<p class="text">我喜欢的电视剧类</p>
+						</td>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/22.jpg"></a>
+							</div>
+							<p class="text">我喜欢的music类</p></td>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/6.jpeg"></a>
+							</div>
+							<p class="text">我喜欢的super star</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/1.jpg"></a>
+							</div>
+							<p class="text">我喜欢的movie类</p>
+						</td>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/16.jpeg"></a>
+							</div>
+							<p class="text">我喜欢的动漫类</p>
+						</td>
+						<td>
+							<div class="pic">
+								<a href=""><img src="img/19.jpg"></a>
+							</div>
+							<p class="text">我喜欢的背景类</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	//图片轮播
+		window.onload=function(){
+			var wrap=document.getElementById('autoplay'),
+				imgs=document.getElementById('autoplay').getElementsByTagName("img"),
+				lists=document.getElementById('list').getElementsByTagName("li"),
+				index=0,
+				timer=null;
+
+			timer=setInterval(play,3000);
+
+			wrap.onmouseover=function(){
+				clearInterval(timer);
+			}
+
+			wrap.onmouseout=function(){
+				timer=setInterval(play,3000);
+			}
+
+			function play(){
+				if(++index>=imgs.length) 
+					{index=0;}
+				changePic(index);
+			}
+
+			function changePic(curIndex){
+				for(var i=0;i<imgs.length;i++)
+				{
+					imgs[i].style.display='none';
+					lists[i].className='';
+				}
+				imgs[curIndex].style.display='block';
+				lists[curIndex].className='on';
+			}
+			//当获取点击元素的id时用lists不可以为啥呀
+			document.body.onclick=function(event){
+				 // var num=lists.indexOf(event.target);
+				  
+				// event.target.siblings().style.display='none';
+				// event.target.style.display='block';
+				index=parseInt(event.target.innerHTML)-1;
+				//console.log(index);
+				changePic(index);
+			}
+		}
+	</script>
+</body>
+</html>

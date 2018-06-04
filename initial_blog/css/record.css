@@ -1,0 +1,77 @@
+.record-main{
+	clear: both;
+	padding: 20px;
+	color: white;
+	font-family: "幼圆";
+	/*background: red;*/
+
+}
+
+#record-left{
+	width: 80%;
+	padding-top: 20px;
+	float: left;
+	/*background: yellow;*/
+}
+
+#record-left .left{
+	
+	border: 2px solid #666;
+	border-radius: 4px;
+	padding: 10px 10px;
+	/*margin-bottom: 1px;*/
+	background: gray;
+	/*opacity: 0.9*/
+}
+
+.left h1{
+	font-family: "宋体";
+	font-weight: normal;
+	font-size: 22px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+.left p{
+	border-top: 1px dotted #666;
+	line-height: 2em;
+	font-size: 18px;
+	padding: 4px;
+}
+
+#record-right{
+	width: 18%;
+	margin-left: 80%;
+	/*margin-left: 70%;*/
+	padding: 22px;
+}
+#catalog{
+	background: gray;
+	list-style: none;
+	padding: 10px;
+	padding-top: 10px;
+	border: 1px solid gray;
+	border-radius: 4px;
+	position: fixed;
+}
+#catalog li{
+	width: 150px;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 2px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #666;
+
+}
+#catalog li a{
+	color: #e1d4cc;
+	text-decoration: none;
+}
+#catalog li a:hover{
+	color: white;
+}
+.white{
+	color: white;
+}
