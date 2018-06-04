@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>third</TITLE>		
+	</HEAD>
+
+	<body>
+
+		<input type="button" name="" value="按钮" class="button">
+		<input type="button" name="" value="停止" class="stop">
+		<input type="button" name="" value="滑动" class="slide">
+		<input type="button" name="" value="改变颜色" class="color">
+
+		<div style="width: 100px;height: 100px;background: blue;position: absolute;">
+			box
+		</div>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				/*$('.button').click(function(){
+					$('div').animate({
+						left:'800px',
+					},3000);
+				});
+
+				$('.stop').click(function(){
+					$('div').stop();
+				});*/
+
+				$.fx.interval=13;
+				//默认为13，数字越小越流畅，但可能影响浏览器的性能
+
+				$.fx.off=false;
+				//默认为false，设置动画效果关闭为true
+
+				$('.button').click(function(){
+					$('div').animate({left:'600px',},1000)
+							.animate({bottom:'200px',},1000)
+							.animate({width:'200px',},1000)
+							.animate({height:'200px',},1000);
+				});
+
+				$('.stop').click(function(){
+					//$('div').stop();
+					//即可停止在运动的位置上然后继续后续的运动
+				
+					//$('div').stop(true);
+					//即刻停止在运动的地方，且不再进行后续的运动
+
+					//$('div').stop(true,true);
+					//即刻停止在该运动的最终位置，且不在进行后续的运动
+				});
+
+				$('.slide').click(function(){
+					$('div').slideToggle('slow',arguments.callee);
+				});
+
+				$('.color').click(function(){
+					$('div:animated').stop().css('background','red');
+				});
+
+			});
+		</script>
+	</body>
+</HTML>

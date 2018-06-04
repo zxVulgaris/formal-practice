@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>second</title>
+</head>
+<body>
+	
+	<div style="height: 300px;width:300px;background: green;">
+		<input type="text" name="">
+	</div>
+	<strong></strong>
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*$('div').mouseover(function(){
+				$('strong').html(function(index,value){
+								return value+'1';
+							})
+			})
+
+			$('div').mouseout(function(){
+				$('strong').html(function(index,value){
+								return value+'1';
+							})
+			})
+			//mouseenter\mouseleave和mouseover|mouseout的区别在于若有层次关系时应使用前者
+			$('div').mouseleave(function(){
+				$('strong').html(function(index,value){
+								return value+'1';
+							})
+			})
+
+			$('input').keydown(function(){
+				alert('keydown!');
+			})
+
+			$('input').keyup(function(){
+				alert('keydown!');
+			})
+			//即使使用input的parents-div也可以，但是keyupkeydown则不可以
+			$('div').keypress(function(){
+				alert('keydown!');
+			})
+
+			$('input').focus(function(){
+				alert('focus!');
+			})
+
+			$('input').blur(function(){
+				alert('blur!');
+			})*/
+
+			//以及focusout的使用成对，不同之处在于focus只能时当前元素，而ficusin可以是子元素
+			$('div').focusin(function(){
+				alert('focusin!');
+			})
+		})
+	</script>
+</body>
+</html>

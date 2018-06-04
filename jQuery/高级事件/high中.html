@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>second</TITLE>
+	</HEAD>
+
+	<body>
+
+		<form style="width: 100px;height: 100px;background: #eee">
+			<input type="button" name="" value="提交" class="button" id="button">
+		</form>
+		
+
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+
+		$(function(){
+
+			/*$('.button').bind('click',function(){
+				alert('事件不委托');
+			});//事件绑定每一个input，冗余
+
+			$('.button').live('click',function(){
+				alert('事件委托');//事件委托给document，只绑定一次
+			});//live在jQuery在1.3使用1.7废弃，1.9删除
+
+			$('.button').bind('click',function(){
+				$(this).clone(true).appendTo('form');
+			});//没有clone的时候就不能使用来复制事件
+
+			$('.button').live('click',function(){
+				$(this).clone().appendTo('form');
+			});//没有clone时使用live，live可以绑定事件
+
+			$('.button').die('click');*/
+
+			//替代live和die的方法
+			$('form').delegate('.button','click',function(){
+				$(this).clone().appendTo('form');
+			})
+			$('form').undelegate('.button','click')
+
+			//使用delegate代替live的原因是live语义不清晰，传递冒泡的次数太多
+
+
+			//使用事件委托和事件绑定取决于一下三点：当需要绑定的事件过多时，当dom不存在即将生成的元素绑定事件时都采用事件委托；而
+			//一般情况下采用bind即可，但这三种都将被废弃
+		})			
+
+		</script>
+	</body>
+</HTML>

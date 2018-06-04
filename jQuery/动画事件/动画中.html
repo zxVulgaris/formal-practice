@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>second</TITLE>
+	</HEAD>
+
+	<body>
+
+		<input type="button" name="" value="button">
+
+		<div id="one" style="width:100px;height: 100px;background: #eee;position: absolute;">box</div>
+<!-- 
+		<div id="two" style="width: 100px;height: 200px;background:red;">pox</div>
+			 -->
+
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+
+		$(function(){
+			/*
+			$('input').click(function(){
+				$('div').animate({
+					width:'300px',
+					height:'200px',
+					fontSize:'36px',
+					opacity:0.5,
+				})
+			})
+
+			$('input').click(function(){
+				$('div').animate({
+					width:'300px',
+					height:'200px',
+					fontSize:'36px',
+					opacity:0.5,
+				},2000,function(){
+					alert('执行完毕！');
+				});
+			});
+
+			$('input').click(function(){
+				$('div').animate({
+					left:'200px',
+					//要设置div的position为绝对的才实现效果
+					width:'300px',
+				},2000,function(){
+					alert('第一个实现!');
+				});
+			});
+
+			$('input').click(function(){
+				$('div').animate({
+					left:'200px',
+					top:'300px',
+					//height:'300px',
+				},2000);
+			});
+
+			$('input').click(function(){
+				$('div').animate({
+					'left':'+=200px',
+				},2000);
+			});
+
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow').css('background','red');
+			});
+
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow',function(){
+					$(this).css('background','red');
+				});
+			});
+
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow').queue(function(){
+					$(this).css('background','red');
+				});
+			});
+
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow').queue(function(next){
+					$(this).css('background','red');
+					next();
+				}).hide('slow');
+			});
+
+
+			//next函数是在1.4之后才出现的，在1.4之前都使用dequeue
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow').queue(function(){
+					$(this).css('background','red');
+					$(this).dequeue();
+				}).hide('slow');
+			});
+
+			$('input').click(function(){
+				$('div').animate({
+					width:'200px',
+				},function(){
+					$('div').animate({
+						height:'200px',
+					},function(){
+						$('div').animate({
+							fontSize:'36px',
+						},function(){
+							$('div').animate({
+								opacity:0.5,
+						});
+					});
+				});
+			});
+					
+			});
+
+			$('input').click(function(){
+				$('#one').animate({width:'200px'})
+				$('#two').animate({height:'200px'})
+				$('#one').animate({fontSize:'36px'})
+				$('#two').animate({opacity:0.5})
+			});//第一个div和第二个div同时进行，并不是依次执行
+
+			
+			$('input').click(function(){
+				$('#one').animate({width:'200px'},function(){
+					$('#two').animate({height:'200px'});
+				});				
+				$('#one').animate({fontSize:'36px'},function(){
+					$('#two').animate({opacity:0.5});
+				});
+				
+			});//实现了依次执行
+*/
+			// clearQueue()消除后面的动作
+			$('input').click(function(){
+				$('div').slideUp('slow').slideDown('slow',function(){$(this).;}).queue(function(){
+					$(this).css('background','red');
+					$(this).dequeue();
+				}).hide('slow');
+			});
+
+			function count(){
+				return $('div').queue('fx').length;
+				//需要带上参数fx，而且每执行完一个queue的长度就减一
+			}
+		});		
+
+		</script>
+	</body>
+</HTML>

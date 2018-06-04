@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>css和class</title>
+	<style type="text/css">
+		.green{color: green;}
+		.red{font-size: 18px;
+			font-weight: bold;
+			color: red;
+			background: #eee
+	</style>
+</head>
+<body>
+	<p class="red">		百度
+	</p>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// alert($('p').css('color'));
+			/*$('p').css({
+				'font-style','italic';
+			})*/
+			//不起作用TT
+			
+			/*alert($('p').css(index,function(index,value){
+				return value;
+			}));*/
+			//错误
+
+			/*var box=$('p').css(['color','background','font-size']);
+			for (var i in box)
+			 {
+				alert(i+':'+box[i]);
+			}*/
+
+			//成功
+			
+			/*$('p').each(function(index,element){
+					alert(element);
+			})*/
+			//不成功
+			
+			/*var box=$('p').css(['color','background','font-size']);
+			$.each(box,function(attr,value){
+				alert(attr+':'+value);
+			})*/
+			//成功，box代表对象数组
+			
+			// $('p').addClass('green');
+			 
+			// $('p').removeClass('red')
+			 
+			/*$('p').click(function(){
+				if ($('p').hasClass('red')) {
+					$(this).removeClass('red');
+					$(this).addClass('green');
+				}
+				else
+				{
+					$(this).addClass('red');
+				}
+			})*/
+
+			//也可以采用toggleClass
+			
+			// $('p').toggleClass('red');
+			
+			/* $('p').click(function(){
+			 	$(this).toggleClass('red',count++%2==0);
+			 })*/
+			//无法实现
+
+
+
+		})
+	</script>
+</body>
+</html>

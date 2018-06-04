@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>first</TITLE>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<style type="text/css">
+			/*div{background: red;padding:4px;margin-right: 4px;float: left;}*/
+		</style>
+	</HEAD>
+
+	<body>
+
+		<!-- <div>
+			你
+		</div>
+		<div>
+			好
+		</div>
+		<div>
+			吗
+		</div>
+		<div>
+			？
+		</div> -->
+
+		<input type="button" name="" value="显示">
+		<input type="button" name="" value="隐藏">
+		<input type="button" name="" value="转换">
+
+		<div style="width: 100px;height: 100px;background: #eee;">
+			box
+		</div>
+
+		<script type="text/javascript">
+
+			$(function(){
+		/*		$('input').eq(0).click(function(){
+					$('div').show();
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide();
+				});
+
+				$('input').eq(0).click(function(){
+					$('div').show(3000);
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide(3000);
+				});
+
+				//show和hide有三个参数fast normal slow
+
+				$('input').eq(0).click(function(){
+					$('div').show('fast');
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide('fast');//600
+				});
+
+				$('input').eq(0).click(function(){
+					$('div').show('normal');
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide('normal');//400
+				});			
+				//当有错误的参数时例如show('iahiag');就会默认为normal
+				$('input').eq(0).click(function(){
+					$('div').show('slow');
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide('slow');//600
+				});	
+
+				$('input').eq(0).click(function(){
+					$('div').show('slow'，function(){
+						alert('列队动画！');
+					});	
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide('slow');//600
+				});
+
+				$('input').eq(0).click(function(){
+					$('div').show('slow',function(){
+						alert('列队动画！');
+					});	
+				});
+				$('input').eq(1).click(function(){
+					$('div').hide('slow',function(){
+						alert('列队动画！')；
+					});//没有实现,使用的表单符号的原因
+				});
+
+				//函数内在包含函数，一层一层地消失
+				$('input').eq(1).click(function(){
+					$('span').first().hide('normal',function(){
+						$('span').eq(1).hide('normal',function(){
+							$('span').eq(2).hide('normal',function(){
+								$('span').eq(3).hide('normal');
+							});
+						});
+					});
+					
+
+				$('input').eq(1).click(function(){
+					$('div').last().hide('normal',function abc(){
+						$(this).prev().hide('normal',abc);
+					});
+				});
+				$('input').eq(0).click(function(){
+					$('div').first().show('normal',function abc(){
+						$(this).next().show('normal',abc);
+					});
+				});
+
+				$('input').eq(0).click(function(){
+					$('div').toggle('slow');
+				});
+				
+				//滑动显示隐藏
+				$('input').eq(0).click(function(){
+					$('div').slideDown('slow');
+				});
+				$('input').eq(1).click(function(){
+					$('div').slideUp('slow');
+				});
+				$('input').eq(2).click(function(){
+					$('div').slideToggle('slow');
+				});*/
+
+				//淡入淡出
+				$('input').eq(0).click(function(){
+					$('div').fadeIn('slow');
+				});
+				$('input').eq(1).click(function(){
+					$('div').fadeOut('slow');
+				});
+				/*$('input').eq(2).click(function(){
+					$('div').fadeToggle('slow');
+				});*/
+				$('input').eq(2).click(function(){
+					$('div').fadeTo('slow',0.33);
+				});
+
+			});
+		</script>
+	</body>
+</HTML>

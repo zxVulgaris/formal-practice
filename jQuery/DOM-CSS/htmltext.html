@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>DOM_CSS的小应用</title>
+</head>
+<body>
+	<div><strong>baidu.com</strong></div>
+	<form action="#" method="post">
+		<input type="text" name="name" value="baidu.com"/>
+	</form>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// alert($('div').html());
+
+			// $('div').html('<em>w3chool.cn</em>');
+
+			/*$('div').html(function(index,value){
+				return value+'w3chool';
+			})*/
+
+			// alert($('div').text());
+
+			// $('div').text('w3chool.cn');
+
+			/*$('div').text(function(index,value){
+				return value+'w3chool.cn';
+			})*/	
+			
+			// $('input').val('w3chool.cn');	
+			// alert($('input').val());	
+			
+			// val还有一个应用就是使得单选和多选获取焦点val('girl','boy','argremment')
+			
+			/*$('input').val(function(index,value){
+				return value+'w3chool.cn'
+			})*/
+
+			//attr不能添加属性，只能改变属性值和获取属性值
+			
+			// alert($('input').attr('name'));
+			// $('input').attr('name','change');
+			/*$('input').attr('name',function()
+			{
+				return 'new name';
+			})
+*/
+			//attr(),is(),filter(),html(),text(),val()都能在里面应用函数
+		})
+	</script>
+</body>
+</html>

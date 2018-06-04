@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>dom节点上</title>
+</head>
+<body>
+	
+	<p>do</p>
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+
+		// $('p').wrap('<em></em>');
+		
+		//$('p').wrap('<em/>')
+		
+		// $('p').wrap(document.createElement('strong'))
+
+		/*$('p').wrap(function(index){
+			return index;
+		})*/
+
+		// $('p').unwrap('<em>');//无法立即理解为什么不行气死宝宝了
+
+		//$('p').wrapAll('<em></em>');
+
+		// $('p').wrapInner('<em></em>');
+		//I find I was not good at function,oh,too sad;
+
+		//$('p').clone().appendTo('body')
+
+		// $('p').clone(true).appendTo('body')	
+		//this is copy and pasty
+
+		// $('p').detach().appendTo('body')
+		//when 'detach' is used ,js or jquery will not work
+	
+		// $('p').empty().appendTo('body')
+		// 清空字节点
+
+		// $('p').replaceWith().appendTo('body')
+		// $('p').replaceAll().appendTo('body')
+	</script>
+
+</body>
+</html>

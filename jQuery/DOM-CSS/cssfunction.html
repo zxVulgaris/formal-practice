@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>css的相关方法</title>
+
+</head>
+<body>
+	<p style="position: relative;top: 1px;"><em>baidu.com</em></p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p><p>ddd</p>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// alert(typeof $('p').css('width'));返回字符串
+			// alert(typeof $('p').width());返回number容错，可不加单位默认px
+			
+			/*alert($('p').width());//仅仅只是内容的距离
+			alert($('p').innerWidth());//加上padding距离
+			alert($('p').outerWidth());//支持边框的距离
+			alert($('p'),outerWidth(true));//加true支持外边距*/
+
+			/*alert($('p').offset().top);//离视口的距离
+			alert($('p').position().top);//相对父元素的像素*/
+
+			/*$('p').scrollTop(100);//这是个错误的代码*/
+
+			$(window).scrollTop(100);//垂直的滚动条比较常用
+
+			//同理右水平的滚动条scrollLeft(),但是不常用
+		})
+	</script>
+</body>
+</html>

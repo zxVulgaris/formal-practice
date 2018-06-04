@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>事件对象下</title>
+</head>
+<body>
+	
+	<form action="#" method="post">
+		<div style="width: 200px;height:200px;background: #eee;">
+			<input type="submit" name="" value="submit">
+			<!-- <a href="http://www.baidu.com/">www.baidu.com</a> -->
+		</div>
+	</form>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+
+		//冒泡行为
+		
+		/*$('input').click(function(){
+			alert('input')
+		});
+		$('div').click(function(){
+			alert('div');
+		});
+		$(document).click(function(){
+			alert('document');
+		})
+
+		//阻止冒泡行为
+		
+		$('input').click(function(e){
+			e.stopPropagation();//传递事件对象e，然后使用该方法
+			
+			alert('input')
+			alert(e.isPropagationStopped());
+		});
+		$('div').click(function(){
+			alert('div');
+		});
+		$(document).click(function(){
+			alert('document');
+		})		
+
+		//阻止默认事件
+		$('a').click(function(e){
+			e.preventDefault();
+			alert('baidu.com');
+		})
+
+		//阻止表单提交
+		$('form').submit(function(e){
+			e.preventDefault();
+			alert(e.isDefaultPrevented());
+		})
+
+		//取消事件的冒泡行为和后续的动作
+		$('input').click(function(e){
+			e.stopImmediatePropagation();
+			alert('input1')
+		});
+		$('input').click(function(e){
+			alert('input2')
+		});
+		$('div').click(function(){
+			alert('div');
+		});
+		$(document).click(function(){
+			alert('document');
+		})*/
+
+		$('a').click(function(e){
+			e.preventDefault();//阻止默认行为
+			e.stopPropagation();//阻止冒泡行为
+			alert('baidu.com');
+		})
+		//相当于
+		$('a').click(function(e){
+			return false;
+		})
+	})
+	</script>
+</body>
+</html>

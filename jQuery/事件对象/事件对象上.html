@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>事件对象上</title>
+</head>
+<body>
+	
+	<input type="button" name="" value="button">
+	<div style="width:300px;height: 300px;background: #eee">
+		<span style="width:100px;height: 100px;background: #ccc;display: block;"></span>
+	</div>
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*$('input').bind('click',function(e){
+				alert(e.type);//click
+			})
+
+			$('input').bind('click',function(e){
+				alert(e.target);//inputelement
+			})
+
+			$('input').bind('click',123,function(e){
+				alert(e.data);//123
+			})
+
+			$('div').bind('click',function(e){
+				alert(e.currentTarget);
+			})
+			$('div').bind('click',function(e){
+				alert(e.target==e.currentTarget);
+			})
+
+			$('span').bind('mouseover',function(e){
+				alert(e.relatedTarget);//the result is decided by the direction
+			})
+
+			$(document).bind('click',function(e){
+				alert(e.pageX+','+e.screenX+','+e.clientX);
+			})
+
+			//page时相对于、、、screen是相对于、、、client是相对于、、、
+			$(document).bind('click',function(e){
+				alert(e.pageY+','+e.screenY+','+e.clientY);
+			})
+
+			$('input').bind('click',function(e){
+				return 123;
+			})
+			$('input').bind('click',function(e){
+				alert(e.return);//没有实现
+			})
+
+			$('input').bind('mousedown',function(e){
+				alert(e.which);//鼠标的左中右见键
+			})
+			$('input').bind('keydown',function(e){
+				alert(e.which);//没有实现
+			})
+
+			$('input').bind('click',function(e){
+				alert(e.timeStamp);//没有实现
+			})
+
+			$('input').bind('click',function(e){
+				alert(e.altKey);//没有实现
+			})*/
+
+			$('input').bind('click',function(e){
+				alert(e.timeStamp);//没有实现
+			})
+		});
+	</script>
+</body>
+</html>

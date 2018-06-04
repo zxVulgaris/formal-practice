@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>third</TITLE>
+		
+	</HEAD>
+
+	<body>
+
+		<form action="123.html" method="post">
+			<input type="button" name="" value="button">
+		</form>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			//on off one 的应用
+			
+			//代替bind
+			/*$('input').on('click',function(){
+				alert('on代替bind')
+			})；
+
+			//代替unbind
+			$('input').off('click');
+
+			//代替事件委托delegate/live
+			$('form').on('click','input',function(){
+				$(this).clone().appendTo('form');
+			})
+
+			//代替die和undelegate
+			$('form').off('click','input')
+	
+			$('input').on('click',{user:'Jane',age:20,},function(e){
+				alert(e.data.user)
+			})
+
+			$('input').on('mouseover mouseout',function(e){
+				alert('移入移出')
+			})
+
+			$('input').on({
+				mouseover:function(){
+					alert('移入');
+				},
+				mouseout:function(){
+					alert('移入移出');
+				},
+				click:function(){
+					alert('点击');
+				},
+			})
+
+			$('form').on('submit',function(e){
+				e.preventDefault();
+			});
+
+			$('form').on('submit',false);
+			//相当于
+			$('form').on('submit',function(e){
+				return false;
+			})
+
+			*/
+			//只能执行一次
+			$('form').one('click','input',function(){
+				$(this).clone().appendTo('form');
+			})
+
+
+		</script>
+	</body>
+</HTML>

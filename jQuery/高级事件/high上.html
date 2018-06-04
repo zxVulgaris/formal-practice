@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta charset="utf-8"/>
+		<TITLE>first</TITLE>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	</HEAD>
+
+	<body>
+
+		<form action="32.html">
+			<input type="button" name="" value="button">
+			<!-- <input type="button" name="" value="button"> -->
+		</form>
+
+		<div id="one">
+			<div id="two">
+				<div id="three"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(function(){
+				/*
+				$('input').bind('click',function(){
+					alert('hhhh');
+				});
+				$('input').trigger('click');
+
+				$('input').bind('click',function(){
+					alert('hhhh');
+				}).trigger('click');
+
+				$('input').click(function(){
+					alert('hhhh');
+				}).trigger('click');
+
+				$('input').click(function(e,data1,date2,date3){
+					alert(data1+'|'+date2[1]+'|'+date3.user);
+				}).trigger('click',['123',['a','b','c'],{user:'Jane'}]);
+
+
+				$('input').bind('click',{user:'Jane'},function(e,data1,date2,date3){
+					alert(data1+'|'+date2[1]+'|'+date3.user+'|'+e.data.user);
+				}).trigger('click',['123',['a','b','c'],{user:'Jane'}]);
+			//bind和click使用是传参的不同在于bind的参数在function的前面，但click是在trigger里面，而且当trigger里面的参数多于一时应使用【】
+
+			//有个和tigger类似的方法tiggerHander
+			$('div').click(function(){
+				alert('hhhhhh');
+			});
+			$('#three').trigger('click');
+
+			$('div').bind('myEvent',function(){
+				alert('自定义的函数');
+			});//trigger不会阻止冒泡
+			$('#three').trigger('myEvent');
+
+			$('div').bind('myEvent',function(){
+				alert('自定义的函数');
+			});//triggerHandler会阻止冒泡
+			$('#three').triggerHandler('myEvent');
+
+			$('input').click(function(){
+				alert('hhhhhh');//trigger返回的是一个对象
+			}).trigger('click').css('background','red');
+
+			$('input').click(function(){
+				alert('hhhhhh');//triggerHandler返回的不是一个对象,故css无法实现
+			}).triggerHandler('click').css('background','red');
+
+			$('form').submit(function(){
+				alert('hhh');
+			});//不会阻止默认行为
+			$('form').trigger('submit')
+
+			$('form').submit(function(){
+				alert('hhh');
+			});//会阻止默认跳转的行为
+			$('form').triggerHandler('submit')*/
+
+			//trigger()返回当前包含事件触发的jQuery对象，而tirggerHandler则返回当前事件的返回值，没有返回值则返回undefined
+
+			//点击事件的重命名
+
+			$('input').bind('click.a',function(){
+				alert('a');
+			});
+			$('input').bind('click.b',function(){
+				alert('b');
+			});
+			//若有同名的事件则用.a
+			$('input').unbind('click.a');
+		});
+		</script>
+	</body>
+</HTML>
