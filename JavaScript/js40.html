@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>排序</title>
+<script>
+	window.onload=function(){
+		var oUl1=document.getElementById('ul1');
+		var oBtn=document.getElementById('btn');
+		
+		oBtn.onclick=function(){
+			var aLi=oUl1.getElementsByTagName('li');
+			var arr=[];
+			//因为ali并不是数组，因此不能用sort方法
+			for(var i=0;i<aLi.length;i++){
+				arr[i]=aLi[i];
+			}
+			arr.sort(function(li1,li2){
+				var n1=parseInt(li1.innerHTML);
+				var n2=parseInt(li2.innerHTML);
+				//记住是innerHTML而不是li这个对象
+				
+				return n1-n2;
+			});
+			//alert(arr[0].innerHTML);
+			
+			for(var i=0;i<aLi.length;i++){
+				//alert(arr[i].innerHTML);
+				oUl1.appendChild(arr[i]);
+				//如果改为aLi就是错的了
+			}
+			
+		};
+	};
+	</script>
+</head>
+
+<body>
+<input id="btn" type="button" value="排序"/>
+<ul id="ul1">
+	<li>44</li>
+	<li>23</li>
+	<li>66</li>
+	<li>34</li>
+	<li>68</li>
+	<li>2</li>
+	<li>9</li>
+</ul>
+</body>
+</html>

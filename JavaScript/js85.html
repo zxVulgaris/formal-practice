@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡程序改成面向对象的程序</title>
+<style>
+	input{
+		width: 60px;
+		height: 30px;
+		line-height: 20px;
+		
+	}
+	.active{
+		background: red;
+		color: white;
+	}
+	.txt{
+		border: 1px solid black;
+		width: 200px;
+		height: 200px;
+		display: none;
+	}
+	</style>
+<script>
+window.onload=function(){
+	new Tab('wrap');
+}
+	function Tab(id){
+		var _this=this;
+		var oWrap=document.getElementById(id);
+		this.aInput=oWrap.getElementsByTagName('input');
+		this.aDiv=oWrap.getElementsByTagName('div');
+		
+		for(var i=0;i<this.aInput.length;i++){
+			this.aInput[i].index=i;
+			this.aInput[i].onclick=function(){
+				_this.change(this);
+			};
+		}
+	};
+	Tab.prototype.change=function(oInput){
+		for(var j=0;j<this.aInput.length;j++){
+			this.aInput[j].className="";
+			this.aDiv[j].style.display="none";
+		}
+		oInput.className="active";
+		this.aDiv[oInput.index].style.display="block";
+	};
+	</script>
+</head>
+
+<body>
+<div id="wrap">
+	<input id="btn1" type="button" value="aaa" class="active">
+	<input id="btn2" type="button" value="bbb">
+	<input id="btn3" type="button" value="ccc">
+	<div id="text1" class="txt" style="display: block">aaa</div>
+	<div id="text2" class="txt">bbb</div>
+	<div id="text3" class="txt">ccc</div>
+</div>
+</body>
+</html>

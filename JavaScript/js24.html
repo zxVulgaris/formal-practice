@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>延时提示框</title>
+<style>
+	#left{
+		width: 80px;
+		height: 80px;
+		background: red;
+		float: left;
+	}
+	#right{
+		margin-left: 100px;
+		width: 200px;
+		height: 200px;
+		background: blue;
+		display: none;
+	}
+	</style>
+<script>
+	window.onload=function(){
+		var oDt1=document.getElementById('left');
+		var oDt2=document.getElementById('right');
+		var timer=null;
+		
+		/*
+		oDt1.onmouseover=function(){
+			clearTimeout(timer);
+			oDt2.style.display="block";	
+		};
+		oDt1.onmouseout=function(){
+			timer=setTimeout(function(){oDt2.style.display="none";},500);
+		};
+		oDt2.onmouseover=function(){
+			clearTimeout(timer);
+			oDt2.style.display="block";	
+		};
+		oDt2.onmouseout=function(){
+			timer=setTimeout(function(){oDt2.style.display="none";},500);
+		};
+		*/
+		//在确定js代码没有任何错误的时候，合并js代码中相似的代码
+		
+		oDt1.onmouseover=oDt2.onmouseover=function(){
+			clearTimeout(timer);
+			oDt2.style.display="block";	
+		};
+		oDt1.onmouseout=oDt2.onmouseout=function(){
+			timer=setTimeout(function(){oDt2.style.display="none";},500);
+		};
+	};
+	</script>
+</head>
+
+<body>
+<div>
+	<div id="left"></div>
+	<div id="right"></div>
+</div>
+</body>
+</html>

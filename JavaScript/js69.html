@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>键盘控制提交留言</title>
+<script>
+window.onload=function(){
+	var oText=document.getElementById('text');
+	var oBtn=document.getElementById('btn');
+	var oTar=document.getElementById('tar');
+	
+	oBtn.onclick=function(){
+		oTar.innerHTML+=oText.value+'\n';
+		oText.value="";
+	};
+	oText.onkeydown=function(ev){
+		var oEvent=ev||event;
+		//ctrl加回车提交
+		if(oEvent.keyCode==13&&oEvent.ctrlKey){
+			oTar.innerHTML+=oText.value+'\n';
+			oText.value="";
+		}
+	};
+}
+	
+	</script>
+</head>
+
+<body>
+<input type="text" id="text">
+<input type="button" value="提交" id="btn">
+<br>
+<textarea cols="30" rows="20" id="tar"></textarea>
+</body>
+</html>

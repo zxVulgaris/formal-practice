@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js日历实现</title>
+<style>
+	#box{
+		width: 300px;
+		margin: 100px auto;
+		border: 1px solid black;
+		padding: 20px;
+		background: #404040;
+	}
+	table{
+		
+		width: 300px;
+/*		border-collapse: collapse;*/
+	}
+	td{
+		background: white;
+		
+		border: 1px solid black;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	p{
+		width: 200px;
+	}
+	#text{
+		width: 240px;
+		color: white;
+		padding-left: 10px;
+		/*padding: 10px;*/
+	}
+	#text h1{
+		font-size: 22px;
+		font-weight: normal;
+	}
+	.active{
+		background: #740000;
+		color: white;
+	}
+</style>
+<script>
+	window.onload=function(){
+		var arr=[
+			'一月份考试和跨年啦',
+			'二月份回家过暑假啦',
+			'三月份开学啦',
+			'四月份准备软考ing',
+			"五月份要考试软考啦，还有全国英语竞赛",
+			"六月份又要考试了，还要准备找工作，悲伤",
+		];
+		var oDt=document.getElementById('box');
+		var oTd=oDt.getElementsByTagName('td');
+		var oPt=document.getElementById('text');
+		
+		for(var i=0;i<oTd.length;i++)
+		{
+			oTd[i].index=i;
+			oTd[i].onmouseover=function(){
+				for(var j=0;j<oTd.length;j++){
+					oTd[j].className="";
+					oPt.innerHTML="";
+				}
+				this.className="active";
+				oPt.innerHTML="<h1>"+(this.index+1)+"月份活动</h1><p>"+arr[this.index]+"</p>";
+			}
+		}
+		oDt.onmouseout=function(){
+			for(var i=0;i<oTd.length;i++)
+				{
+					oTd[i].className="";
+					oPt.innerHTML="";
+				}
+		}
+	};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<table cellspacing="10">
+	  <tbody>
+		<tr>
+		  <td>1月份</td>
+		  <td>2月份</td>
+		  <td>3月份</td>
+		</tr>
+		<tr>
+		  <td>4月份</td>
+		  <td>5月份</td>
+		  <td>6月份</td>
+		</tr>
+		<tr>
+		  <td>7月份</td>
+		  <td>8月份</td>
+		  <td>9月份</td>
+		</tr>
+		<tr>
+		  <td>10月份</td>
+		  <td>11月份</td>
+		  <td>12月份</td>
+		</tr>
+	  </tbody>
+	</table>
+	<p id="text">
+	</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义滚动条--控制文字滚动</title>
+<style>
+	#div1{
+		width: 600px;
+		height: 20px;
+		background: gray;
+		position: relative;
+		margin: 20px auto;
+	}
+	#div2{
+		width: 20px;
+		height: 20px;
+		background: red;
+		position: absolute;
+	}
+	#div3{
+		width: 400px;
+		height: 200px;
+		border: 1px solid black;
+		overflow: hidden;
+		position: relative;
+/*		background: yellow;
+		filter: alpha(opacity:0);
+		opacity:0;*/
+	}
+	#div4{
+		
+		position: absolute;
+	}
+	</style>
+<script>
+	window.onload=function(){
+		 var oDiv1=document.getElementById('div1');
+		 var oDiv2=document.getElementById('div2');
+		 var oDiv3=document.getElementById('div3');
+		 var oDiv4=document.getElementById('div4');
+		 oDiv2.onmousedown=function(ev){
+			 var oEvent=ev||event;
+			 var posx=oEvent.clientX-oDiv2.offsetLeft;
+			 document.onmousemove=function(ev){
+				 var oEvent=ev||event;
+//				 alert(oEvent.clientX);
+				 var l=oEvent.clientX-posx;
+				 if(l<0){l=0}
+				 else if(l>oDiv1.offsetWidth-oDiv2.offsetWidth){
+					 l=oDiv1.offsetWidth-oDiv2.offsetWidth;
+				 }
+				 oDiv2.style.left=l+'px';
+				 scare=oDiv2.offsetLeft/580;
+				 oDiv4.style.top=-(oDiv4.offsetHeight-oDiv3.offsetHeight)*scare+'px';
+				 
+			 };
+			 document.onmouseup=function(){
+				 document.onmousemove=null;
+			 };
+		 };
+	};
+	</script>
+</head>
+
+<body>
+<div id="div1">
+	<div id="div2"></div>
+</div>
+<div id="div3"><div id="div4">警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦警告警告时须参加哦i退金额哦积分dogs体哦
+</div>
+</div>
+</body>
+</html>

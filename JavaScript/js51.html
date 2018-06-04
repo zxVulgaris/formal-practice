@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>变高变宽公用一个函数</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+	}
+</style>
+<script>
+	function startMove(obj,target){
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var speed=(target-obj.offsetWidth)/6;
+			//由于offset是只包括内容的宽度，但是不包括border和padding的长度
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(obj.offsetWidth==target){
+				clearInterval(obj.timer);
+			}
+			else{
+				obj.style.width=obj.offsetWidth+speed+'px';
+			}
+		},30);
+	};
+	function startMove2(obj,target){
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var speed=(target-obj.offsetHeight)/6;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(obj.offsetHeight==target){
+				clearInterval(obj.timer);
+			}
+			else{
+				obj.style.height=obj.offsetHeight+speed+'px';
+			}
+		},30);
+	};
+	window.onload=function(){
+		var oDiv1=document.getElementsByTagName('div')[0];
+		var oDiv2=document.getElementsByTagName('div')[1];
+		
+		oDiv1.onmouseover=function(){
+			startMove(this,400);
+		};
+		oDiv1.onmouseout=function(){
+			startMove(this,200);
+		};
+		oDiv2.onmouseover=function(){
+			startMove2(this,400);
+		};
+		oDiv2.onmouseout=function(){
+			startMove2(this,200);
+		};
+		
+	};
+</script>
+</head>
+
+<body>
+<div></div><br>
+<div></div>
+</body>
+</html>

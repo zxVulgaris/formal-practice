@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>匀速运动停下的条件</title>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('box');
+		var oBtn=document.getElementsByTagName('input')[0];
+		var oBtn1=document.getElementsByTagName('input')[1];
+		
+		oBtn.onclick=function(){
+			
+			startMove(300);
+				
+		};
+		oBtn1.onclick=function(){
+			
+			startMove(100);
+				
+		};
+	};
+	var timer=null;
+	function startMove(target){
+		var oDiv=document.getElementById('box');
+		var speed=0;
+		clearInterval(timer);
+			//防止加速
+			timer=setInterval(function(){
+				if(oDiv.offsetLeft<target){
+					speed=7;
+				}
+				else{
+					speed=-7;
+					//由于速度原因他会闪动
+				}
+				if(Math.abs(oDiv.offsetLeft-target)<=7){
+					clearInterval(timer);
+					oDiv.style.left=target+'px';
+				}
+				else{
+					oDiv.style.left=oDiv.offsetLeft+speed+'px';
+				}
+			},30);
+	}
+</script>
+</head>
+
+<body>
+<input type="button" value="300的按钮"/>
+<input type="button" value="100的按钮"/>
+<div id="box" style="width: 100px;height: 100px;background: red;position:absolute;top: 100px;left: 600px;"></div>
+<div id="div1" style="position: absolute;top: 0;left: 100px;width: 1px;background: black; height: 400px;"></div>
+<div id="div2" style="position: absolute;top: 0;left: 300px;width: 1px;background: black; height: 400px;"></div>
+	
+
+</body>
+</html>

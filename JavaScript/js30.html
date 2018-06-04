@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>firstChild</title>
+<script>
+	window.onload=function(){
+		var oUl=document.getElementById('box');
+		
+		//oUl.firstChild.style.background='red';
+		//在高版本的浏览器中firstchild指的是第一个空白文本节点，但是在ie6-8中却能正常显示
+		
+		//oUl.firstElementChild.style.background='red';
+		//在chrome和Firefox上能够正常运行
+		
+		//考虑到兼容性问题
+		if(oUl.firstElementChild){
+			oUl.firstElementChild.style.background='red';
+			//ie9 chrome firefox
+		}
+		else{
+			oUl.firstChild.style.background='red';
+			//ie6-8
+		}
+		
+		//lastChild nextSiblings previousSiblings也是一样
+	};
+	</script>
+</head>
+
+<body>
+<ul id="box">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

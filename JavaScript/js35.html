@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格应用</title>
+<script>
+	window.onload=function(){
+		var oTd=document.getElementsByTagName('table')[0];
+//		alert(oTd.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[0].getElementsByTagName('td')[1].innerHTML);
+		
+//		alert(oTd.tBodies[0].rows[0].cells[1].innerHTML);
+		
+//		alert(oTd.tHead.rows[0].cells[1].innerHTML)
+		//tfoot thead也是一样
+	};
+	</script>
+</head>
+
+<body>
+<table border="1" width="300">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>AGE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>张三</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>李四</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>王五</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>张杏</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>刘四</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

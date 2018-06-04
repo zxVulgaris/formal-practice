@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>自定义滚动条</title>
+<style>
+	#div1{
+		width: 600px;
+		height: 20px;
+		background: gray;
+		position: relative;
+		margin: 20px auto;
+	}
+	#div2{
+		width: 20px;
+		height: 20px;
+		background: red;
+		position: absolute;
+	}
+	#div3{
+		width: 200px;
+		height: 200px;//当一个div没有宽高时无法显示任何东西
+		background: yellow;
+		filter: alpha(opacity:0);
+		opacity:0;
+	}
+	</style>
+<script>
+	window.onload=function(){
+		 var oDiv1=document.getElementById('div1');
+		 var oDiv2=document.getElementById('div2');
+		 var oDiv3=document.getElementById('div3');
+		 oDiv2.onmousedown=function(ev){
+			 var oEvent=ev||event;
+			 var posx=oEvent.clientX-oDiv2.offsetLeft;
+			 document.onmousemove=function(ev){
+				 var oEvent=ev||event;
+//				 alert(oEvent.clientX);
+				 var l=oEvent.clientX-posx;
+				 if(l<0){l=0}
+				 else if(l>oDiv1.offsetWidth-oDiv2.offsetWidth){
+					 l=oDiv1.offsetWidth-oDiv2.offsetWidth;
+				 }
+				 oDiv2.style.left=l+'px';
+				 var scare=Math.round((oDiv2.offsetLeft/580)*10);
+				 
+				 //控制宽高
+				 /*
+				 oDiv3.style.width=400*scare+'px';
+				 oDiv3.style.height=400*scare+'px';
+				 */
+				 
+				 //控制透明度
+				 oDiv3.style.filter='alpha(opacity:'+scare*10+')';
+				 oDiv3.style.opacity=scare/10;
+			 };
+			 document.onmouseup=function(){
+				 document.onmousemove=null;
+			 };
+		 };
+	};
+	</script>
+</head>
+
+<body>
+<div id="div1">
+	<div id="div2"></div>
+</div>
+<div id="div3"></div>
+</body>
+</html>

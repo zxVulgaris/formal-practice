@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>获取行间样式</title>
+<style>
+	div{height: 200px;width: 200px;background: red;}
+	</style>
+<script>
+	function getStyle(obj,name){
+		//之前括号里面写的是currentStyle[name]，结果出错了
+		if(obj.currentStyle){
+			return obj.currentStyle[name];
+		}
+		else
+			{
+				return getComputedStyle(obj,false)[name];
+			}
+	}
+	
+	window.onload=function(){
+	//style获取的行间样式是，因此有了新的方法
+	var oDiv=document.getElementById("box");
+	//alert(oDiv.style.height);
+		
+	//alert(oDiv.currentStyle.height);	//ie兼容，firefox和chrome不兼容
+		
+	//alert(getComputedStyle(oDiv,false).height);//firefox chrome兼容
+	alert(getStyle(oDiv,"backgroundColor"));
+	//background无法显示，复合样式样式无法显示
+		
+	}
+	</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

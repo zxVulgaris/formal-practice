@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>childNodes</title>
+<script>
+	window.onload=function(){
+		var oUl=document.getElementById('box');
+		var aLi=document.getElementsByTagName('li');
+		var l=0;
+		
+		//alert(oUl.childNodes.length);
+		//显示的是13，包括空的文本节点和元素节点在内
+		
+		for(var i=0;i<oUl.childNodes.length;i++){
+			
+			//alert(oUl.childNodes[i].nodeType);
+			
+			if(oUl.childNodes[i].nodeType==1){
+				l=l+1;
+			}
+		}
+		alert(l);
+		//当nodeType结果为1时为元素节点 为3时为文本节点
+		//据说childnodes只在ie6-8特别有效
+		
+		alert(oUl.children.length);//不会有兼容问题也不会有算入文本节点的问题
+	};
+	</script>
+</head>
+
+<body>
+	<ul id="box">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

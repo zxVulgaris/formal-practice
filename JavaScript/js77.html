@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>带框拖拽</title>
+<style>
+	#div{
+		width: 100px;
+		height: 100px;
+		background: red;
+		position:absolute;
+		top: 20px;
+		left: 20px;
+	}
+	.box{
+		width: 100px;
+		height: 100px;
+		border:1px solid black;
+		position: absolute;
+	}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div');
+		oDiv.onmousedown=function(ev){
+			var oEvent=ev||event;
+			var posx=oEvent.clientX-oDiv.offsetLeft;
+			var posy=oEvent.clientY-oDiv.offsetTop;
+			
+			var oDiv1=document.createElement('div');
+			oDiv1.className='box';
+			
+			document.body.appendChild(oDiv1);
+			oDiv1.style.left=oDiv.offsetLeft+'px';
+			oDiv1.style.top=oDiv.offsetTop+'px';
+			oDiv1.onmousemove=function(ev){
+				var oEvent=ev||event;
+				oDiv1.style.left=oEvent.clientX-posx+'px';
+				oDiv1.style.top=oEvent.clientY-posy+'px';
+			};
+			oDiv1.onmouseup=function(){
+				oDiv.style.left=oDiv1.offsetLeft+'px';
+				oDiv.style.top=oDiv1.offsetTop+'px';
+				document.body.removeChild(oDiv1);
+			};
+		};
+	};
+	</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>

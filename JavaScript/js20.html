@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>定时器的练习</title>
+<script>
+window.onload=function(){
+	var obt1=document.getElementById('btn1');
+	var obt2=document.getElementById('btn2');
+	var timer=null;
+	
+	//出错 不造为啥
+	/*
+	timer=setInterval(function(){
+		//alert('a');
+	},1000);
+	obt.onclick=function(){
+		clearInterval(timer);
+	};
+	*/
+	
+	
+	//与setInterval的区别在于setTimeout只执行一次 用于延迟执行
+	/*
+	setTimeout(function(){
+		alert('a');
+	},1000);
+	*/
+	
+	//再谷歌上好像是实现不了clearInterval 但是在firefox上能够实现。。。不过都要摁好几遍，在ie上倒是挺灵敏的
+	obt1.onclick=function(){
+		timer=setInterval(function(){
+				alert('a');
+			},2000);
+	};
+	obt2.onclick=function(){
+		clearInterval(timer);
+	};
+	
+	
+}
+	</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="start">
+<input id="btn2" type="button" value="stop">
+</body>
+</html>

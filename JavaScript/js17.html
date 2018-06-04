@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>利用arguments进行函数的选择</title>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('box');
+		/*
+		function add(){
+		if(arguments.length==2){
+			return arguments[0]+arguments[1];
+		}
+		else
+			{
+				return arguments[0]*arguments[1];
+			}
+		}
+		alert(add(2,3));
+	
+		alert(add(2,3,4));
+		*/
+		
+		function change(obj,name,value){
+			if(arguments.length==2){
+				return obj.style.width;
+			}
+			else 
+			{
+				obj.style.background=value;
+			}
+			
+		
+		}
+		//alert(change(oDiv,'width'));
+		change(oDiv,'background',"red");
+	}
+	</script>
+</head>
+
+<body>
+<div style="width: 100px;height: 200px;background: pink" id="box"></div>
+</body>
+</html>

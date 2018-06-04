@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>字符串转换</title>
+<script>
+window.onload=function(){
+	var oInput1=document.getElementById('text1');
+	var oInput2=document.getElementById('text2');
+	var oBtn=document.getElementById('btn');
+	
+	oBtn.onclick=function(){
+		//alert(oInput1.value+oInput1.value);
+		//value的值是string，当用+时会以字符串的形式添加
+		
+		
+		//alert(parseInt(oInput1.value)+parseInt(oInput2.value));
+		//当输入框的输入的是float型时用parseFloat来进行转换
+		//当输入框输入的是非数字时，出来的结果时NaN，此时需要对输入框的数据进行判断
+		
+		a=parseInt(oInput1.value);
+		b=parseInt(oInput2.value);
+		if(isNaN(a))
+		{
+		   alert("输入的第一个数据不是一个数字");
+		   }
+		   else if(isNaN(b))
+		   {
+				   alert("输入的第二个数据不是数字");
+				   }
+				else
+					{
+						alert(a+b);
+					}
+		
+	}
+}
+</script>
+</head>
+
+<body>
+	<input id="text1" type="text" name="left">
+	<input id="text2" type="text" name="right">
+	<input id="btn" type="button" value="add" name="key">
+</body>
+</html>

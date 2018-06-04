@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>命名空间</title>
+<script>
+	var znx={};
+	znx.fx={};
+	znx.comm={};
+	znx.site={};
+	
+	znx.fx.getUser=function(){
+		alert('a');
+	};
+	znx.comm.getUser=function(){
+		alert('b');
+	};
+	znx.site.getUser=function(){
+		alert('c');
+	};
+	
+	znx.fx.getUser();
+	znx.comm.getUser();
+	znx.site.getUser();
+	</script>
+</head>
+
+<body>
+</body>
+</html>

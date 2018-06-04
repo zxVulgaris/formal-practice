@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡切换</title>
+<style>
+	input{width: 60px;height: 30px;line-height: 30px;}
+	p{width: 240px;height: 120px;border: 1px solid black;display: none}
+	.active{color: red;}
+</style>
+<script>
+	window.onload=function(){
+		var oBt=document.getElementsByTagName('input');
+		var aPt=document.getElementsByTagName('p');
+		for(var i=0;i<oBt.length;i++){
+			oBt[i].index=i;//不能在html中给按钮设置index但是可以在js里面添加js
+			oBt[i].onclick=function(){
+				//alert(this.value);
+				for(var j=0;j<oBt.length;j++){
+					oBt[j].className="";
+					//aPt[this.index].style.display="none";
+					aPt[j].style.display="none";
+				}//先使所有的选项卡累消失和所有的段落都隐藏
+				this.className='active';
+				aPt[this.index].style.display="block";
+				//然后使用当前事件绑定的对象this进行设置
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<input type="button" value="first" class="active">
+<input type="button" value="second">
+<input type="button" value="third">
+<input type="button" value="fourth">
+<p style="display: block;">first</p>
+<p>second</p>
+<p>third</p>
+<p>fourth</p>
+</body>
+</html>

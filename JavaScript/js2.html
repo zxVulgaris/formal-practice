@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>提取行间事件</title>
+<style>
+	#box div{
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+		float: left;
+		margin-right: 10px;
+	}	
+	
+</style>
+<script>
+	window.onload=function(){
+		var aDc=document.getElementById("box");
+		var odc=aDc.getElementsByTagName("div");
+		
+		aDc.onclick=function (){
+			for(var i=0;i<odc.length;i++){
+				odc[i].style.background="red";
+				//倘若odc后不加i，就显示不出js效果，在js中一次只能对一个对象进行
+			}
+		}	
+	};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+</body>
+</html>

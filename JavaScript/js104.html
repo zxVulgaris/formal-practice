@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>邮箱检验</title>
+<script>
+	window.onload=function(){
+		var oTxt=document.getElementById('txt');
+		var oSub=document.getElementById('sub');
+		oSub.onclick=function(){
+//			var re=/\w+@[a-z0-9]+\.[a-z]+/i;
+			//这样是不包括首位的测试的，当首位出现非法字符的时候测不出来
+			
+			var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;
+			if(re.test(oTxt.value)){
+				alert('您写的邮箱地址是正确的');
+			}
+			else{
+				alert('你丫写错了');
+			}
+		};
+	}
+	</script>
+</head>
+
+<body>
+<input type="text" id="txt"/>
+<input type="submit" value="提交" id="sub"/>
+</body>
+</html>

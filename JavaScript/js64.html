@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件冒泡</title>
+<style>
+	#div1{
+		width: 400px;
+/*		height: 600px;*/
+		margin: 100px auto;
+		padding: 100px;
+		background: blue;
+	}
+	#div2{
+		background: red;
+		padding: 100px;
+	}
+	#div3{
+		background: yellow;
+		padding: 100px;
+	}
+	
+	</style>
+<script>
+	function getStyle(obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}
+		else{
+			return getComputedStyle(obj,false)[attr];
+		}
+	};
+	window.onload=function(){
+		var oDiv1=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+//		alert(getStyle(oDiv1,'width'));
+		//这里使用getStyle没有出错
+		oDiv1.onclick=function(){
+			alert(getStyle(this,'background'));
+		};
+		oDiv2.onclick=function(){
+			alert(getStyle(this,'background'));
+		};
+		oDiv3.onclick=function(){
+			alert(getStyle(this,'background'));
+		};
+		//事件冒泡
+	};
+	</script>
+</head>
+
+<body>
+<div id="div1">
+	<div id="div2">
+		<div id="div3"></div>
+	</div>
+</div>
+</body>
+</html>

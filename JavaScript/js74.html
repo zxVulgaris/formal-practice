@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件绑定</title>
+<script>
+	window.onload=function(){
+		var oBtn=document.getElementById('btn');
+		/*
+		oBtn.onclick=function(){
+			alert('a');
+		};
+		oBtn.onclick=function(){
+			alert('b');
+		};
+		*/
+		
+		//只能显示b，不能显示a
+		/*只适用于IE6-8
+		oBtn.attachEvent('onclick',function(){
+			alert('a');
+		});
+		oBtn.attachEvent('onclick',function(){
+			alert('b');
+		});*/
+		
+		//适用于IE9和chrome以及Firefox
+		/*oBtn.addEventListener('click',function(){
+			alert('a');
+		},false);
+		oBtn.addEventListener('click',function(){
+			alert('b');
+		},false);
+		*/
+		
+		//兼容性判断
+		myAddEvent(oBtn,'click',function(){alert('a');});
+		myAddEvent(oBtn,'click',function(){alert('b');});
+	};
+	function myAddEvent(obj,ev,fn){
+		if(obj.attachEvent){
+			obj.attachEvent('on'+ev,fn);
+		}
+		else{
+			obj.addEventListener(ev,fn,false);
+		}
+	}
+	</script>
+</head>
+
+<body>
+<input id="btn" type="button" value="点击我">
+</body>
+</html>

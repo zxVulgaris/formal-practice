@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>右下角浮动</title>
+<style>
+	body{
+		height: 2000px;
+	}
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+		position: absolute;
+/*		position: fixed;*/
+/*		但是fixed在IE6下不兼容*/
+		right: 0;
+		bottom: 0;
+	}
+	</style>
+<script>
+	window.onscroll=window.onresize=function(){
+		var oDiv=document.getElementById('div');
+		scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		
+		oDiv.style.top=scrollTop+document.documentElement.clientHeight-oDiv.offsetHeight+'px';
+//		alert(oDiv.style.top);
+//		alert(oDiv.offsetTop);
+		
+	};
+	
+	/*当userAgent是IE6的时候就采用以上方法，不是IE6就采用fixed的方法*/
+	</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>

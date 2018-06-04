@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖拽改写</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+		position:absolute;
+	}
+	</style>
+<script>
+	window.onload=function(){
+		new Main('div1');
+	};
+	function Main(id){
+		var _this=this;
+		
+		this.oDiv1=document.getElementById(id);
+		
+		this.oDiv1.onmousedown=function(ev)
+		{
+			_this.Tab1(ev);
+		};
+	};
+	
+	Main.prototype.Tab1=function(ev){
+			var _this=this;
+			var oEvent=ev||event;
+			this.posx=0;
+			this.posy=0;
+			this.posx=oEvent.clientX-this.oDiv1.offsetLeft;
+			this.posy=oEvent.clientY-this.oDiv1.offsetTop;
+			
+			document.onmousemove=function(ev){
+				_this.Tab2(ev);
+			};
+			document.onmouseup=function(){
+				_this.Tab3();
+			};
+	};
+//	console.log(Main.prototype.Tab1);
+	Main.prototype.Tab2=function (ev){
+				var oEvent=ev||event;
+				this.l=oEvent.clientX-this.posx;
+				this.t=oEvent.clientY-this.posy;
+				
+				if(this.l<0)
+				{
+					this.l=0
+				}
+				else if(this.l>document.documentElement.clientWidth-this.oDiv1.offsetWidth)
+				{
+					this.l=document.documentElement.clientWidth-this.oDiv1.offsetWidth;
+				}
+				
+				if(this.t<0)
+				{
+					this.t=0
+				}
+				else if(this.t>document.documentElement.clientHeight-this.oDiv1.offsetHeight)
+				{
+					this.t=document.documentElement.clientHeight-this.oDiv1.offsetHeight;
+				}
+				
+				this.oDiv1.style.left=this.l+'px';
+				this.oDiv1.style.top=this.t+'px';
+				
+				
+	};
+	Main.prototype.Tab3=function (){	
+				document.onmousemove=null;
+				document.onmouseup=null;
+			};
+	</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

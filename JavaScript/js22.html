@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>其他Date函数</title>
+<script>
+	var odt=new Date();
+	var arr=['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+	
+	//获取年月日
+	alert(odt.getFullYear()+'.'+(odt.getMonth()+1)+'.'+odt.getDate());
+	
+	//获取星期
+	alert(arr[odt.getDay()]);
+	</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>创建DOM元素</title>
+<script>
+	window.onload=function(){
+		var oTxt=document.getElementById('text');
+		var oBtn=document.getElementById('btn');
+		var oBtn2=document.getElementById('btn2');
+		var oUl=document.getElementById('box');
+		
+		
+		oBtn.onclick=function(){
+			var oLi=document.createElement('li');
+			var aLi=oUl.getElementsByTagName('li');
+			//开始的时候没有var 然后后面的innerHTML的设置就没有用
+			oLi.innerHTML=oTxt.value;
+			//oUl.appendChild(oLi);
+			
+			//oUl.insertBefore(oLi,aLi[0]);
+			//当没有插入第一个li元素时，ali[0]就出错了在ie上
+			
+			if(aLi.length>0){
+				oUl.insertBefore(oLi,aLi[0]);	
+				//在已有的元素前插入新元素
+			}
+			else{
+				oUl.appendChild(oLi);
+			}
+		};
+		
+		oBtn2.onclick=function(){
+			var aLi=oUl.getElementsByTagName('li');
+			if(aLi.length==0){}
+			else{
+				oUl.removeChild(aLi[0]);
+			}
+		};
+	};
+	</script>
+</head>
+
+<body>
+<input type="text" id="text"/>
+<input type="button" value="确定" id="btn">
+<input type="button" value="删除" id="btn2">
+<ul id="box">
+	
+</ul>
+</body>
+</html>

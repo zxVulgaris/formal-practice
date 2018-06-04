@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>键盘控制div的移动</title>
+<style>
+	body{
+		background:black;
+	}
+	#div{
+		width: 200px;
+		height: 200px;
+		background: gray;
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+	</style>
+<script>
+	function getStyle(obj,attr){
+//		alert(obj.currentStyle)
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}
+		else{
+			return getComputedStyle(obj,false)[attr];
+		}
+	};
+document.onkeydown=function(ev){
+		var oEvent=ev||event;
+//		alert(getStyle(oDiv,'width'));
+	//这里使用getStyle出错了
+		var oDiv=document.getElementById('div');
+//		alert(oEvent.keyCode);
+		if(oEvent.keyCode==38){
+			oDiv.style.top=oDiv.offsetTop-10+'px';
+		}
+		if(oEvent.keyCode==39){
+			oDiv.style.left=oDiv.offsetLeft+10+'px';
+		}
+		//为什么会有卡顿现象
+};
+	</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>

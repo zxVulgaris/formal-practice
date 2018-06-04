@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>删除和增加行数</title>
+<script>
+window.onload=function(){
+	var oTab=document.getElementsByTagName('table')[0];
+	//一定要注意，tagName是取数组的，为此受好大的罪tmd
+	var oText=document.getElementById('text');
+	var oNum=document.getElementById('number');
+	var oBtn=document.getElementById('button');
+	var id=oTab.tBodies[0].rows.length+1
+	oBtn.onclick=function(){
+		var oTr=document.createElement('tr');
+
+		var oTd=document.createElement('td');
+		oTd.innerHTML=id++;
+		oTr.appendChild(oTd);
+		
+		var oTd=document.createElement('td');
+		oTd.innerHTML=oText.value;
+		oTr.appendChild(oTd);
+		
+		var oTd=document.createElement('td');
+		oTd.innerHTML=oNum.value;
+		oTr.appendChild(oTd);
+		
+		var oTd=document.createElement('td');
+		oTd.innerHTML='<a href="javascript:">delete</a>';
+		oTr.appendChild(oTd);
+		
+		oTd.getElementsByTagName('a')[0].onclick=function(){
+			oTab.removeChild(this.parentNode.parentNode)
+			//或者this.parentNode.parentNode.style.display='none';	
+		};
+		
+		oTab.appendChild(oTr);
+	};
+	
+};
+	</script>
+</head>
+
+<body>
+<input id="text" type="text"/>
+<input id="number" type="number"/>
+<input id="button" type="button" value="确定"/>
+<table border="1" width="300">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>AGE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>张三</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>李四</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>王五</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>张杏</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>刘四</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

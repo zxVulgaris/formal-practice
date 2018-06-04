@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多对象淡入淡出</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+		filter: aplha(opacity:30);
+		opacity: 0.3;
+	}
+	</style>
+<script>
+//	var alpha=30;
+	function startMove(obj,target){
+		clearInterval(obj.timer);	
+		obj.timer=setInterval(function(){
+			var speed=(target-obj.alpha)/6;
+			if(target==obj.alpha){
+				clearInterval(obj.timer);
+			}
+			else{
+				obj.alpha+=speed;
+				obj.style.filter='alpha(opacity:'+obj.alpha+')';
+				obj.style.opacity=obj.alpha/100;
+			}
+		},30);
+	};
+	window.onload=function(){
+		var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].timer=null;
+			aDiv[i].alpha=30;
+			//对于物体的单个属性设置单个的数组元素
+			aDiv[i].onmouseover=function(){
+				startMove(this,100);
+			};
+			aDiv[i].onmouseout=function(){
+				startMove(this,30);
+			};
+		}
+	};
+	</script>
+</head>
+
+<body>
+<div></div><br>
+<div></div><br>
+<div></div>
+</body>
+</html>

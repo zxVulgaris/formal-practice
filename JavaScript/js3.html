@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全选多选和反选</title>
+<script>
+	window.onload=function(){
+		var oBt1=document.getElementById("selectall");
+		var oBt2=document.getElementById("selectnone");
+		var oBt3=document.getElementById("selectinstead");
+		var oDc=document.getElementById("box");
+		var aDc=oDc.getElementsByTagName("input");
+		oBt1.onclick=function(){
+			for(var i=0;i<aDc.length;i++){
+				aDc[i].checked=true;
+			}
+		};
+		oBt2.onclick=function(){
+			for(var i=0;i<aDc.length;i++){
+				aDc[i].checked=false;
+			}
+		};
+		oBt3.onclick=function(){
+			for(var i=0;i<aDc.length;i++){
+				if(aDc[i].checked==true)
+					{aDc[i].checked=false;}
+				else
+					{aDc[i].checked=true;}	
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<input type="button" value="selectAll" id="selectall">
+<input type="button" value="selectNone" id="selectnone">
+<input type="button" value="selectInstead" id="selectinstead">
+
+<!--为防止按钮和多选在js中无法分开而使得所有的多选都包含在一个盒子里-->
+<div id="box">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+	<input type="checkbox" name="same">
+</div>
+</body>
+</html>

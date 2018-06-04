@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格排序</title>
+<script>
+	window.onload=function(){
+		var oTab=document.getElementsByTagName('table')[0];
+		var oBtn=document.getElementById('btn');
+		
+		oBtn.onclick=function(){
+			var arr=[];
+			
+			for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+//				arr[i]=oTab.tBodies[0].rows[i].cells[0];
+				//如果获得的是cells的话，排序后id会排在age上！！！
+ 				arr[i]=oTab.tBodies[0].rows[i];
+				
+			}
+			
+//			arr.sort(function(td1,td2){
+//				var n1=parseInt(td1.innerHTML);
+//				var n2=parseInt(td2.innerHTML);
+//				
+//				return td1-td2;
+//			});
+			
+			arr.sort(function(tr1,tr2){
+				var n1=parseInt(tr1.cells[0].innerHTML);
+				var n2=parseInt(tr2.cells[0].innerHTML);
+				
+				return n1-n2;
+			});
+			
+			//alert(arr[0].innerHTML);
+			
+			for(var i=0;i<arr.length;i++){
+				oTab.tBodies[0].appendChild(arr[i])
+			}
+		};
+		
+	};
+	</script>
+</head>
+
+<body>
+<input id="btn" type="button" value="排序">
+<table border="1" width="300">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>AGE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>张三</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>李四</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>王五</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>张杏</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>刘四</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>offset说明</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+		border: 10px solid black;
+	}
+	</style>
+<script>
+	function getStyle(obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}
+		else{
+			return getComputedStyle(obj,false)[attr];
+		}
+		//返回的是字符串
+	};
+	setInterval(function(){
+		var oDiv=document.getElementsByTagName('div')[0];
+		//offset包括了border的长度
+		oDiv.style.width=parseInt(getStyle(oDiv,'width'))-1+'px';
+	},30);
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

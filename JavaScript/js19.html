@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数组函数</title>
+<script>
+	var a=[1,2,3];
+	var b=[4,5,6];
+	//alert(a.concat(b));
+	//alert(a.join('-'));
+	
+	var arr1=['soft','comfort','dedicated','frustrated']
+	var arr=[73,32,5,31,9];
+	
+	//alert(arr1.sort());//只能对字符串进行排序，对数字没有效果
+	
+	arr.sort(function(n1,n2){
+		if(n1>n2){return 1;}
+		else if(n1<n2){return -1;}
+		else{return 0;}
+		
+	})
+	//等同于
+	//return n1-n2;
+	alert(arr);
+	</script>
+</head>
+
+<body>
+</body>
+</html>

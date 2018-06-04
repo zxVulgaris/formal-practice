@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>幻灯片播放</title>
+<style>
+	#wrap{
+		width: 300px;
+		height: 140px;
+		overflow: hidden;
+		margin: 100px auto;
+		background: red;
+		position: relative;
+	}
+	#ul1{
+		width: 300px;
+		position: absolute;
+		top: 0;
+		left: -40px;
+	}
+	#wrap img{
+		width: 300px;
+		height: 180px;
+/*
+		position: absolute;
+		top: 0;
+		left: 0;
+*/
+	}
+	ul{
+		list-style: none;
+		position: absolute;
+		bottom: 4px;
+		right: 4px;
+		margin: 0;
+	}
+	ul li{
+		float: left;
+		margin-left: 6px;
+		padding-left:4px;
+		padding-right:4px;
+		border: 1px solid yellow;
+		cursor: pointer;
+/*		background: gray;*/
+	}
+	.active{
+		background: yellow;
+	}
+	</style>
+<script src="move1.js"></script>
+<script>
+	window.onload=function(){
+		var oUl1=document.getElementById('ul1');
+		var aImg=document.getElementsByTagName('img');
+		var aLi=document.getElementsByTagName('li');
+		var now=0;
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+			aLi[i].onclick=function(){
+				now=this.index;
+				tab();
+			};
+		}
+		
+		function tab(){
+			for(var j=0;j<aLi.length;j++){
+					aLi[j].className="";
+					
+				}
+				aLi[now].className="active";
+//				oUl1.style.top=-180*this.index+'px';
+				startMove(oUl1,{'top':-180*now});
+		}
+		
+		function next(){
+			now++;
+			if(now==aLi.length){
+				now==1;
+			}
+			tab();
+		};
+		setInterval(next,2000)	;
+		
+	};
+	
+	</script>
+</head>
+
+<body>
+<div id="wrap">
+<ul id="ul1">
+	<img src="img/1.jpg">
+	<img src="img/2.jpg">
+	<img src="img/3.jpeg">
+	<img src="img/4.jpeg">
+</ul>
+<ul id="ul">
+	<li class="active">1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+</div>
+</body>
+</html>

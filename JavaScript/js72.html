@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>只输入数字的输入框</title>
+<script>
+window.onload=function(){
+	var oText=document.getElementById('text');
+	oText.onkeydown=function(ev){
+		//return false;
+		//不可以输入单个的单词或着其他键盘所代表的unicode，但是居然可以是中文
+		var oEvent=ev||event;
+		if(oEvent.keyCode!=8 && oEvent.keyCode<48 || oEvent.keyCode>57)
+			//如果改成或就不成立了
+		{
+			return false;
+		};
+	};
+		
+};
+	</script>
+</head>
+
+<body>
+<input type="text" id="text"/>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搜索----一般由后台完成</title>
+<script>
+	window.onload=function(){
+		var oTab=document.getElementsByTagName('table')[0];
+		var oText=document.getElementById('text');
+		var oBtn=document.getElementById('button');
+		
+		oBtn.onclick=function(){
+			for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+				//if(oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase()==oText.value.toLowerCase())
+					//忽略大小写
+				//if(oTab.tBodies[0].rows[i].cells[1].innerHTML.search(oText.value)!==-1)
+				//模糊搜索
+				
+				//多关键字搜索
+				var arr=oText.value.split(" ");
+				//oTab.tBodies[0].rows[i].style.background='';
+				oTab.tBodies[0].rows[i].style.display='none';
+				//关键
+				for(var j=0;j<arr.length;j++)
+				{
+				if(oTab.tBodies[0].rows[i].cells[1].innerHTML.search(arr[j])!==-1)
+				{
+					//高亮与筛选，这里是筛选
+					oTab.tBodies[0].rows[i].style.display='block';
+				}
+				else{
+					
+				}
+				}
+			}
+		};
+	};
+	</script>
+</head>
+
+<body>
+<input id="text" type="text"/>
+<input id="button" type="button" value="搜索"/>
+<table border="1" width="300">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>AGE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>张三</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>李四</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>王五</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>张杏</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>刘四</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Green</td>
+      <td>21</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

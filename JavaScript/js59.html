@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>通过json实现多属性同时改变</title>
+<style>
+	#div{
+		width: 100px;
+		height: 100px;
+		background: red;
+		
+	}
+	</style>
+<!--<script src="move.js"></script>-->
+<script src="move1.js"></script>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div');
+		
+		/*oDiv.onmouseout=function(){
+			startMove(this,'width',300);
+			startMove(this,'height',300);
+			//如此的话不会执行宽度的变化，因为在执行高度函数之前会进行clearInterval
+		};*/
+		
+		//修改函数，用json代替
+		/*oDiv.onmouseover=function(){
+			startMove(this,{'width':101,'height':300});
+			//当宽到达的时候，高的y运动也会停止，但是高还没有到达300，因此任然要修改函数
+		};
+		oDiv.onmouseout=function(){
+			startMove(this,{'width':100,'height':100});
+		};*/
+		
+		oDiv.onmouseover=function(){
+			startMove(this,{'width':101,'height':300});
+			//当宽到达的时候，高的y运动也会停止，但是高还没有到达300，因此任然要修改函数
+		};
+		oDiv.onmouseout=function(){
+			startMove(this,{'width':100,'height':100});
+		};
+	};
+	</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>

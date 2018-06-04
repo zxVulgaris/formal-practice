@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>first</title>
+<style>
+	div{
+	width: 200px;
+	height: 200px;
+	background: red;}	
+</style>
+<script language="javascript">
+	/*function toWidth(){
+		var oDc=document.getElementById('div');
+		oDc.style.width='400px';
+	}
+	function toHeight(){
+		var oDc=document.getElementById('div');
+		oDc.style.height='400px';
+	}
+	function toGreen(){
+		var oDc=document.getElementById('div');
+		oDc.style.background='green';
+	}*/
+	//合并相同的函数，起到简化的作用
+	function setStyle(name,value){
+		var oDc=document.getElementById('div');
+		oDc.style[name]=value;
+		//.name和[name]的不同在于所有可以用点表示的都可以用方框表示，但是能用方框表示的不一定能用点表示
+	}
+</script>
+</head>
+<body>
+<input type="button" value="wider" onClick="setStyle('width','400px')">
+<input type="button" value="higer" onClick="setStyle('height','400px')">
+<input type="button" value="green" onClick="setStyle('background','green')">
+<div id="div"></div>
+</body>
+</html>

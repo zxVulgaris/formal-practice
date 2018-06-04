@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>敏感过滤</title>
+<script>
+	window.onload=function(){
+		var oTxt1=document.getElementById('txt1');
+		var oTxt2=document.getElementById('txt2');
+		var oBtn=document.getElementById('btn');
+		
+		oBtn.onclick=function(){
+			var re=/淘宝|阿里巴巴/g;
+			
+			oTxt2.value=oTxt1.value.replace(re,'**');
+		};
+	};
+	</script>
+</head>
+
+<body>
+<textarea cols="30" rows="10" id="txt1"></textarea><br>
+<input type="button" value="过滤" id="btn"><br>
+<textarea cols="30" rows="10" id="txt2"></textarea>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>解决工厂方式的缺点</title>
+<script>
+	function createPerson(name,qq){//构造函数
+		this.name=name;
+		this.qq=qq;
+
+	};
+	createPerson.prototype.showName=function(){
+		alert(this.name);
+	};
+	createPerson.prototype.showQQ=function(){
+		alert(this.qq);
+	};
+	
+	var obj1=new createPerson('blue','12344');
+	var obj2=new createPerson('egs','3255');
+	alert(obj1.showName==obj2.showName)
+	
+	//这样就解决了一个不能用new
+	//和产生太多冗余的两个缺陷
+	</script>
+</head>
+
+<body>
+</body>
+</html>

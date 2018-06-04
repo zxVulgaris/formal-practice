@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>网络侧边栏分享</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#div1{
+		width: 150px;
+		height: 200px;
+		background: blue;
+		position: absolute;
+		left: -150px;
+	}
+	#div2{
+		
+		width: 20px;
+		height: 60px;
+		background: red;
+		position: absolute;
+		top: 70px;
+		right: -20px;
+	}
+	</style>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');			
+		
+		oDiv.onmouseover=function(){
+			startMove(0);	
+		};
+		oDiv.onmouseout=function(){
+			startMove(-150);	
+		};
+	};
+	var timer=null;
+	function startMove(target){
+		var oDiv=document.getElementById('div1');
+		var speed=10;
+		if(oDiv.offsetLeft<target){
+			speed=10;
+		}
+		else{
+			speed=-10;
+		}
+		clearInterval(timer);
+		timer=setInterval(function(){
+			
+			if(oDiv.offsetLeft==target){
+				clearInterval(timer);
+			}
+			else{
+				document.title=oDiv.offsetLeft;
+				oDiv.style.left=oDiv.offsetLeft+speed+'px';
+			}
+
+		},30);
+	};
+	</script>
+</head>
+
+<body>
+<div id="div1">
+	<div id="div2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式</title>
+<script>
+	var str="ab chd siahfia"
+	var re=new RegExp('a');
+	var re=/a/g;
+	//i表示忽略大小写，g表示找出全部符合要求的
+	//分别是js分割风格和perl风格两种写法
+	
+	alert(str.match(re));
+	alert(str.search(re));
+	//search是找出符合的元素的位置，且只能显示第一个已经找到的元素
+	//而match是找出符合的元素
+	
+	</script>
+</head>
+
+<body>
+</body>
+</html>

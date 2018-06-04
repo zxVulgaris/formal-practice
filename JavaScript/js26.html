@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无缝滚动</title>
+<style>
+	div{
+		width: 800px;
+		height: 100px;
+		background: red;
+		position: relative;
+		top: 100px;
+		left: 250px;
+		overflow: hidden;
+	}
+	ul{
+		list-style: none;
+		width: 800px;
+		position: absolute;
+		left: -40px;
+		top: -20px;
+		
+		
+		
+	}
+	li{
+		float: left;
+		
+	}
+	img{
+		width: 200px;
+	}
+	</style>
+<script>
+	window.onload=function(){
+	var oDiv=document.getElementById('wrap');
+	var oUl=document.getElementById('box');
+	var aLi=document.getElementsByTagName('li');
+	var timer=null;
+	var speed=2
+	oUl.innerHTML+=oUl.innerHTML;
+		
+	//改变ul的宽度，使得图片n能够在同一直线上显示
+	oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+	
+	document.getElementsByTagName('input')[0].onclick=function(){
+		speed=-2;
+	};
+	document.getElementsByTagName('input')[1].onclick=function(){
+		speed=2;
+	};
+		
+	function move(){
+		//对ul的左侧距离进行判断，符合条件时复位
+		if(oUl.offsetLeft<-oUl.offsetWidth/2){
+			oUl.style.left='-40px';
+		}
+		//40是指ul的left，与老师的例子的不同点也是在于它右边为0而我右边为-40
+		//开始右边为0的时候出现一个小bug 每次刷新都是从第二段流动，致使每次出现div的红色背景
+		if(oUl.offsetLeft>-40){
+			oUl.style.left=-oUl.offsetWidth/2+'px';
+			//相对div这个盒子而言，使得右边四张图片覆盖div
+		}
+		oUl.style.left=oUl.offsetLeft+speed+'px';
+		
+	}
+		
+	timer=setInterval(move,30);
+	
+	oDiv.onmouseover=function(){
+		clearInterval(timer);
+	};
+	oDiv.onmouseout=function(){
+		timer=setInterval(move,30);	
+	};
+		
+	};
+	</script>
+</head>
+
+<body>
+<input type="button" value="向左流动">
+<input type="button" value="向右流动">
+<div id="wrap">
+	<ul id="box">
+		<li>
+			<img src="img/1.jpg" title="first" alt="第一张图片">
+		</li>
+		<li>
+			<img src="img/2.jpg" title="second" alt="第二张图片">
+		</li>
+		<li>
+			<img src="img/3.jpeg" title="third" alt="第三张图片">
+		</li>
+		<li>
+			<img src="img/4.jpeg" title="fourth" alt="第四张图片">
+		</li>
+	</ul>
+</div>
+</body>
+</html>

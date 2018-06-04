@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>this的用法</title>
+<script>
+	function show(){
+		alert(this);
+	}
+	show();
+	//显示的是object window
+	
+	window.show=function(){
+		alert(this);
+	}
+	window.show();
+	//一样的结果
+	</script>
+</head>
+
+<body>
+</body>
+</html>
