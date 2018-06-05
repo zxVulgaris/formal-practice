@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{font-family:"Arial Unicode MS", "Microsoft JhengHei Light";font-size:16px;color:#333333;}
+div{width:600px;margin:0 auto;border:1px #CCCCCC solid;padding:10px 10px;}
+div header{text-align:center;border-bottom:#CCCCCC 1px dotted;}
+       div header h1{font-size:1.5em;font-weight:normal;margin-bottom:10px;}
+	   div header h4{font-size0.8em;color:#CCCCCC;font-weight:normal;padding-bottom:10px;}
+div article p{line-height:1.5em;text-indent:2em;margin-top:10px;}
+      div article p img{ display:block; margin:0 auto;}
+div footer {margin-top:10px;border-top:1px #CCCCCC dotted;}
+      div footer p{text-indent:0;}
+      	    div footer p a {text-decoration:none;color:#333333;}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>例子3</title>
+</head>
+
+<body>
+<script>
+function isLeapYear(year){
+//判断闰年的条件
+		if(year%4==0&&year%100!=0||year%400==0)
+		{
+					return year+"年是闰年";
+		}
+		else
+		{
+					return year+"年是平年";
+		}
+}
+document.write(isLeapYear(2014));
+</script>
+</body>
+</html>

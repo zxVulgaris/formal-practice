@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0}
+body{background:#CCF;font-size:14px;font-family:"微软雅黑";line-height:1.5em;color:#666666;}
+table{width:640px;background:#FFC;margin:10px auto;
+		  border:1px solid #FC6;border-radius:4px;}
+td{padding:10px 5px;}
+.box{width:200px; height:24px;border-radius:4px;}
+.box1{width:100px;height:30px;vertical-align:middle;}
+				/*单选radio与复选记不清楚了 and 
+				  可以用text-align实现文字居中vertical-align怎木用才能使文字居中*/

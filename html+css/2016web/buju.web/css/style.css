@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{font-family:"微软雅黑";font-family:14px;width:100%;}
+#wrapper{width:800px;margin:100px auto;background-color:#CCC;}
+	#aside{width:288px;background:#999;float:left;}
+		#aside ul{}
+		#aside ul li{height:150px;list-style:none;border:1px solid #666;margin-bottom:2px;}
+			.link{height:49px;border-bottom:1px solid #666;}
+				.link a{color:#06C;text-decoration:none;}
+			.detail{}
+	
+	#main{width:500px;height:460px;background:#666;margin-left:300px;border:1px solid #333;}
+		#header{border:1px solid #333;margin-bottom:2px;height:100px;}
+		#main-box{border:1px solid #333;}
+			#main-box h1{height:50px;}
+			#main-box p{height:99px;}

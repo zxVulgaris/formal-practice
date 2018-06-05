@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>例子4</title>
+<script type="text/javascript">
+function showHello()
+{
+		var count=document.myForm.textCount.value;//文档框中输入的次数
+		 for(i=0;i<count;i++)
+		 {
+			 document.write(<h2>Hello World</h2>) ;  //按指定次数输出
+		 }
+}
+</script>
+</head>
+
+<body>
+<form name="myForm">
+	<input type="text" name="txtcount">
+    <input type="submit" name="Submit" value="显示Hello World" onClick="showHello()">
+</form>
+</body>
+</html>

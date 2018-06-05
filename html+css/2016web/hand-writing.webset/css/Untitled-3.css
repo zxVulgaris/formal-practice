@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;padding:0;}
+
+div{width:710px;
+      height:360;
+	  border:3px  #666666 double;
+	  padding:10px 30px;
+	  background:#CC9;
+	  margin:0 auto;}

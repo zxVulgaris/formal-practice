@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+<form>
+<table>
+  <tr>
+    <td>序列号</td>
+    <td><input type="number" name="number-men" class="box" min=0 required></td>
+    <td>注：序列号由销售人员提供，一旦注册则不能修改</td>
+  </tr>
+  <tr>
+    <td>序列号密码</td>
+    <td><input type="password" name="panum"  class="box" min="0" required></td>
+    <td>序列号密码由销售人员提供</td>
+  </tr>
+  <tr>
+    <td>登录账号</td>
+    <td><input type="text" name="reg-text" class="box" placeholder="登录账号" required></td>
+    <td>由字母和数字组合，注册成功后不能修改</td>
+  </tr>
+  <tr>
+    <td>登录密码</td>
+    <td><input type="password" name="reg-pasw"  class="box" min="0" required></td>
+    <td>建议使用英文字母和数字符号组合的密码</td>
+  </tr>
+  <tr>
+    <td>重置密码</td>
+    <td><input type="password" name="reg-agn"  class="box" min="0" required></td>
+    <td>请重置输入一次密码</td>
+  </tr>
+  <tr>
+    <td>联系人</td>
+    <td><input type="text" name="reg-per" class="box" placeholder="名字" required></td>
+    <td>请输入联系人的名字</td>
+  </tr>
+  <tr>
+    <td>性别</td>
+    <td><label><input type="radio" value="girl" name="sex"></label>女
+    		&nbsp;&nbsp;&nbsp;&nbsp;
+    		 <label><input type="radio" value="boy" name="sex"></label>男
+    		  
+    </td>
+    <td>请选择性别</td>
+  </tr>
+  <tr>
+    <td>手机号码</td>
+    <td><input type="tel" name="reg-num" class="box" placeholder="手机号码" min="0" required></td>
+    <td>请输入联系人的手机号码</td>
+  </tr>
+  <tr>
+    <td>家庭住址</td>
+    <td><input type="text" name="reg-adr" class="box" placeholder="家庭住址" required></td>
+    <td>请输入联系人的家庭住址</td>
+  </tr>
+  <tr>
+    <td>QQ号码</td>
+    <td><input type="tel" name="reg-qq" class="box" placeholder="QQ号码" min="0" required></td>
+    <td>请输入联系人的qq号码</td>
+  </tr>
+  <tr>
+    <td colspan="3"><input type="submit" value="提交" class="box1">
+    <input type="reset" value="重置" class="box1"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

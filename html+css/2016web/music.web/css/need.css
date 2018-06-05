@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+header{background:#000000;padding:2px 30px;color:#FFFFFF;border:2px #CCCCCC solid;}
+nav{background:#FF0000;padding:2px 30px;color:#FFFFFF;border:2px #CCC solid;margin:0;}
+#first{width:800px;height:300px;background:#CCFFCC;float:left;}   /*只能用float属性，为什么不能用display属性用了之后会与background属性相冲*/
+div.one{height:100px;border:1px #C9C solid;} /*边框与内容有间隙*/
+#second{width:400px;background:#CCFF99;height:300px;float:right;}

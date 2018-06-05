@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0}
+#main-box{font-family: 微软雅黑;font-size:14px;line-height: 1.5em;
+					color:#666;}
+	/*头部部分*/		
+	#header{height:100px;line-height:25px;background:#CCFFCC}
+	#header img{}/*图片不知道如何调整位置，忘记了图片的属性和参数值*/
+	#header #autoseah{display:inline-block;margin-left:200px;display:inline-blocks;margin-top:20px;}
+					#autoseah em{font-style:normal;font-size:24px;margin-right:10px;}
+							#search{width:400px;height:30px;line-height:30px;color:#666;}
+							#autoseah #get{background:#999;width:46px;height:36px;font-size:16px;margin-left:10px;} /*提交边框不知道怎么修改大小要看视频哦*/
+	/*身体部分*/
+	#bdy {}
+			/*导航*/
+			#navie{height:25px;line-height:25px;background:#CCCCFF;}	
+			#navie ul{list-style:none;}
+				#navie ul li{float:left;margin-left:180px;}/*如何控制每个之间的间距*/
+				#navie ul li:hover{color:#CC0000;cursor:pointer;}	
+			/*主要的图书种类*/
+			#infro-kind{}																
+					#infro-spekind{background:#CCCC99;width:400px;height:630px;
+					float:left;}
+					#infro-kind img{width:930px;height;630px;}
+			/*主编推荐*/
+			#infro-editor{height:400px;background:#FFCCFF;}		
+					#editor-pro{}
+			/*1、对男孩子阅读的推荐*/	
+			#infro-boy{}										
+					#boy-pro{}
+					#boy-boom{}
+			/*2、对女孩子阅读的推荐*/
+			#infro-girl{}
+					#girl-pro{}		
+					#girl-boom{}
+			/*3、对精品图书阅读的推荐*/
+			#infro-copet{}
+					#copet-pro{}
+					#copet-boom{}
+			/*	4、对漫画阅读的推荐*/
+			#infro-comy{}
+					#comy-pro{}
+					#comy-boom{}
+			/*5、对文章的推荐*/
+			#infro-article{}
+					#article-pro{}
+					#article-boom{}
+		/*底部*/
+#footer{height:400px;background:#669999;color:#666;}
+							#cloudread{}
+							#reading{}
+		
+/*12345为一类*/
+.first{width:930px;height:400px;background:#99CCFF;float:left;
+border-bottom:1px solid #CCC;}
+
+.second{width:400px;height:400px;background:#33CC66;margin-left:930px;
+border-bottom:1px solid #CCC;}
+
+

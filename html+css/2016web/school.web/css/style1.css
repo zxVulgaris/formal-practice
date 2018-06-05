@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+box{font-size:14px;font-family:"Microsoft YaHei UI", sans-serif;}
+
+	#infro-sev{font-size:12px;height:24px;line-height:24px;
+						color:#FFFFFF;background:#CC0000;}
+		#sev{}
+		.serv{float:right;list-style:none;margin-right:10px;}
+		.taobao{}/*不知道淘宝页面中display：none的使用方法*/
+			#ensure{width:30px;height:24px;line-height:24px;font-size:12px;}/*出现问题了*/
+			#content{}    /*这里也出现问题了，搜索框没法定义*/
+			#search{}
+		/*	头部部分*/
+		
+	#infro-main{}
+		#infro-nav{height:100px;background:#FF0000;}
+		#help{margin-bottom:50px;}
+		#infro-nav ul{width:800px;list-style:none;margin-left:530px;background:#CC0000;}/*不会做啊不会做好想哭*/
+			.navx{float:left;margin-left:10px;}
+			.navx a{color:#FFFFFF;text-decoration:none;}
+			.navx a:hover{color:#333333;cursor:pointer;}
+		
+		#infro-main1{background:#666;height:460px;}
+			#main1-hd{width:800px;font-size:14px;height:20px;border-bottom:1px solid #999;margin-bottom:10px;padding-top:20px;}
+				#main1-f{color:#FFF}
+				#main1-s a{color:#FFF;text-decoration:none;float:right;}
+				#main1-s a:hover{color:#000;cursor:pointer;}
+				
+			#main1-bd{}
+				#infro-imp{width:250px;font-size:14px;line-height:20px;}
+					#infro-imp img{width:250px;}
+					#imp{padding:5px;padding-bottom:40px;padding-left:4px;}
+					#imp h1{font-size:16px;font-weight:normal;padding-bottom:10px;}
+					#imp p{padding-bottom:10px;}
+				#infro-news{width:250px;margin:0 10px;padding:5px;padding-left:4px;}
+				#infro-news h1{font-size:14px;font-weight:nomal;padding-bottom:2px;border-bottom:1px solid #F09;}
+					.news-list{list-style:none;}
+					.list{margin-top:5px;border-bottom:1px solid #CCC;padding-bottom:4px;}
+				#infro-med{width:250px;padding:5px;padding-left:4px;}
+				#infro-med h1{font-size:14px;font-weight:nomal;border-bottom:1px solid #63F;padding-bottom:2px;}
+				.for-float{float:left;background:#FFF;height:360px;}
+				.for-center{width:800px;margin:0 auto;}
+				
+		#infro-main2{background:#FCC;height:380px;}
+			#infro-form{width:250px;height:90pxpx;padding-left:4px;}
+			#infro-new{width:250px;margin:30px 10px;}
+			#infro-act{width:250px;}
+		#infro-main2 h1{color:#000;font-size:20px;font-weight:bold;padding-bottom:4px;border-bottom:1px solid #999}
+			.sec{height:250px;float:left;background:#FFF;margin-top:30px}
+
+	#img{height:150px;background:#CC0000;text-align:center;padding-top:80px;}
+	
+	
+	
+	

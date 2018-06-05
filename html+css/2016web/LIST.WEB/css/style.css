@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+ul{list-style:none;}
+div{font-family:'SimSun';font-size:14px;width:390px;margin:30px auto;
+		color:#333333;line-height:1.8em;}
+h1{font-size:24px;font-weight:bold;color:#333333;border:border:1px #CCCCCC;}
+ul{margin-top:10px;overflow:hidden; }
+ul li  span{color:#999999;line-height:12px;}
+li:hover{color:#CC00FF;cursor:pointer;}
+

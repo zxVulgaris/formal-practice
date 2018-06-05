@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{width:100%;height:100%;font-family:"Arial Black", Gadget, sans-serif;font-size:14px;}
+#wrapper{width:1348px;margin:0 auto;}
+	header{width:1348px;height:150px;margin:0 auto;background:#0C0;}
+	#header-chain{}
+	#chain-left{width:200px;font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:bold;color:#FFF;float:left;}
+	#chain-right{float:right;}
+	
+	#main{width:1220px;margin:0 auto;}
+		#channel-nav{width:100px;height:360px;background:#CC9966;position:absolute;z-index:1;}
+		#news-detail{width:700px;height:800px;background:#F99;float:left;margin-left:110px;}
+		#classify{width:400px;height:800px;background:#6FC;float:left;margin-left:10px;}
+		
+		
+	footer{width:1346px;height:200px;background:#CCC;clear:both;}	
+		
